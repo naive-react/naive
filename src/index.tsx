@@ -1,3 +1,11 @@
+/*
+ * @Author: shiruiqiang
+ * @Date: 2023-07-03 11:19:58
+ * @LastEditTime: 2023-07-04 16:46:29
+ * @LastEditors: shiruiqiang
+ * @FilePath: index.tsx
+ * @Description: shiruiqiang
+ */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -6,9 +14,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

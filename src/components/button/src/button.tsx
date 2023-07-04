@@ -1,6 +1,9 @@
 import { PropsWithChildren } from 'react';
 import { ButtonProps } from './types';
 
-export default (props: PropsWithChildren<ButtonProps>) => {
-  return <button></button>;
+export const Button = (props: PropsWithChildren<ButtonProps>) => {
+  const { children } = props;
+  return <button>
+    {children}
+  </button>;
 };
