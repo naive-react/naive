@@ -1,0 +1,169 @@
+@use "sass:map";
+@import "./variabels";
+
+$baseColor: map-get(
+    $map: $base,
+    $key: neutralbase,
+);
+// primaary
+
+$primaryColor: map-get(
+    $map: $base,
+    $key: primarydefault,
+);
+$primaryColorHover: map-get(
+    $map: $base,
+    $key: primaryhover,
+);
+$primaryColorPressed: map-get(
+    $map: $base,
+    $key: primaryactive,
+);
+$primaryColorSuppl: map-get(
+    $map: $base,
+    $key: primarysuppl,
+);
+// info color
+$infoColor: map-get(
+    $map: $base,
+    $key: infodefault,
+);
+$infoColorHover: map-get(
+    $map: $base,
+    $key: infohover,
+);
+
+$infoColorPressed: map-get(
+    $map: $base,
+    $key: infoactive,
+);
+$infoColorSuppl: map-get(
+    $map: $base,
+    $key: infosuppl,
+);
+// success color
+$successColor: map-get(
+    $map: $base,
+    $key: successdefault,
+);
+$successColorHover: map-get(
+    $map: $base,
+    $key: successhover,
+);
+$successColorPressed: map-get(
+    $map: $base,
+    $key: successactive,
+);
+$successColorSuppl: map-get(
+    $map: $base,
+    $key: successsuppl,
+);
+// warning color
+$warningColor: map-get(
+    $map: $base,
+    $key: warningdefault,
+);
+$warningColorHover: map-get(
+    $map: $base,
+    $key: warninghover,
+);
+$warningColorPressed: map-get(
+    $map: $base,
+    $key: warningactive,
+);
+$warningColorSuppl: map-get(
+    $map: $base,
+    $key: warningsuppl,
+);
+// error color
+$errorColor: map-get(
+    $map: $base,
+    $key: errordefault,
+);
+$errorColorHover: map-get(
+    $map: $base,
+    $key: errorhover,
+);
+$errorColorPressed: map-get(
+    $map: $base,
+    $key: erroractive,
+);
+$errorColorSuppl: map-get(
+    $map: $base,
+    $key: errorsuppl,
+);
+
+// text color
+$textColorBase: map-get(
+    $map: $base,
+    $key: neutraltextbase,
+);
+$textColor1: rgb(31, 34, 37);
+$textColor2: rgb(51, 54, 57);
+$textColor3: rgb(118, 124, 130);
+// opcity
+$opacity1: map-get(
+    $map: $base,
+    $key: alpha1,
+);
+$opacity2: map-get(
+    $map: $base,
+    $key: alpha2,
+);
+$opacity3: map-get(
+    $map: $base,
+    $key: alpha3,
+);
+$opacity4: map-get(
+    $map: $base,
+    $key: alpha4,
+);
+$opacity5: map-get(
+    $map: $base,
+    $key: alpha5,
+);
+
+$dividerColor: rgb(239, 239, 245);
+$borderColor: rgb(224, 224, 230);
+
+// secondary button color
+// can also be used in tertiary button & quaternary button
+$buttonColor2: rgba(46, 51, 56, 0.05);
+$buttonColor2Hover: rgba(46, 51, 56, 0.09);
+$buttonColor2Pressed: rgba(46, 51, 56, 0.13);
+
+// box-shadow
+$boxShadow1: "0 1px 2px -2px rgba(0, 0, 0, .08), 0 3px 6px 0 rgba(0, 0, 0, .06), 0 5px 12px 4px rgba(0, 0, 0, .04)";
+$boxShadow2: "0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .08), 0 9px 28px 8px rgba(0, 0, 0, .05)";
+$boxShadow3: "0 6px 16px -9px rgba(0, 0, 0, .08), 0 9px 28px 0 rgba(0, 0, 0, .05), 0 12px 48px 16px rgba(0, 0, 0, .03)";
+
+// font
+$fontFamily: 'v-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+$fontFamilyMono: "v-mono, SFMono-Regular, Menlo, Consolas, Courier, monospace";
+
+$fontWeight: 400;
+$fontWeightStrong: 500;
+
+$cubicBezierEaseInOut: "cubic-bezier(.4, 0, .2, 1)";
+$cubicBezierEaseOut: "cubic-bezier(0, 0, .2, 1)";
+$cubicBezierEaseIn: "cubic-bezier(.4, 0, 1, 1)";
+
+$borderRadius: 3px;
+$borderRadiusSmall: 2px;
+
+$fontSize: 14px;
+$fontSizeMini: 12px;
+$fontSizeTiny: 12px;
+$fontSizeSmall: 14px;
+$fontSizeMedium: 14px;
+$fontSizeLarge: 15px;
+$fontSizeHuge: 16px;
+
+$lineHeight: 1.6;
+
+$heightMini: 16px; // private now, it's too small
+$heightTiny: 22px;
+$heightSmall: 28px;
+$heightMedium: 34px;
+$heightLarge: 40px;
+$heightHuge: 46px;
