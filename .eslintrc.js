@@ -46,13 +46,14 @@ module.exports = {
         "semi": ["error", "always"],
         "@typescript-eslint/semi": 'off',
         "block-spacing": ["error", "never"],
-        "@typescript-eslint/object-curly-spacing": ["error", "always"],
+        "@typescript-eslint/object-curly-spacing": ["error", "never"],
         "@typescript-eslint/consistent-type-imports": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "react/display-name": "off",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/promise-function-async": "off",
-        "@typescript-eslint/promise-function-async": "off"
+        "@typescript-eslint/promise-function-async": "off",
+        "@typescript-eslint/member-delimiter-style": "error"
     },
     "settings": {
         react: {

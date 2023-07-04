@@ -1,12 +1,12 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 14:39:41
- * @LastEditTime: 2023-07-04 15:42:10
+ * @LastEditTime: 2023-07-05 00:42:30
  * @LastEditors: shiruiqiang
  * @FilePath: types.ts
  * @Description: shiruiqiang
  */
-import { type Size } from '../../../type/shape';
+import {type Size} from '../../../type/shape';
 
 type Type = 'default' | 'tertiary' | 'primary' | 'info' | 'success' | 'warning' | 'error'
 

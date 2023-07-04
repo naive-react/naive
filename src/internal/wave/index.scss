@@ -1,0 +1,25 @@
+@import '../../styles/common.scss';
+@keyframes button-wave-opacity {
+    0% {
+        opacity: 0.6;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.base-wave{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: inherit;
+    animation-iteration-count: 1;
+    animation-duration: .6s;
+    animation-timing-function: $cubicBezierEaseOut, $cubicBezierEaseOut;
+}
+.base-wave-active{
+    z-index: 1;
+    animation-name: button-wave-spread,button-wave-opacity;
+}

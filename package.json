@@ -14,6 +14,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
+    "underscore": "^1.13.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -45,9 +46,11 @@
     ]
   },
   "devDependencies": {
+    "@types/underscore": "^1.11.5",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
     "babel-plugin-react-require": "^4.0.0",
+    "classnames": "^2.3.2",
     "craco": "^0.0.3",
     "eslint": "^8.39.0",
     "eslint-config-standard-with-typescript": "^36.0.0",

@@ -6,5 +6,5 @@
  * @FilePath: index.ts
  * @Description: shiruiqiang
  */
-export { Button } from './src/button';
-export type { ButtonProps } from './src/types';
+export {Button} from './src/button';
+export type {ButtonProps} from './src/types';

@@ -1,0 +1,152 @@
+@import "../../../styles/common";
+.n-button {
+    background-color: #0000;
+    white-space: nowrap;
+    position: relative;
+    outline: none;
+    z-index: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: inherit;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1;
+    border-radius: $borderRadius;
+    transition: color 0.3s $cubicBezierEaseInOut, background-color 0.3s $cubicBezierEaseInOut,
+        opacity 0.3s $cubicBezierEaseInOut, border-color 0.3s $cubicBezierEaseInOut;
+}
+
+.n-tiny {
+    height: $heightTiny;
+}
+
+.n-small {
+    height: $heightSmall;
+}
+
+.n-medium {
+    height: $heightMedium;
+}
+
+.n-large {
+    height: $heightLarge;
+}
+
+.n-padding-tiny {
+    padding: 0 6px;
+    font-size: $fontSizeTiny;
+}
+
+.n-padding-small {
+    padding: 0 10px;
+    font-size: $fontSizeSmall;
+}
+
+.n-padding-medium {
+    padding: 0 14px;
+    font-size: $fontSizeMedium;
+}
+
+.n-padding-large {
+    padding: 0 18px;
+    font-size: $fontSizeLarge;
+}
+
+.n-default {
+    border: 1px solid rgb(224, 224, 230);
+
+    &:hover {
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+    }
+
+    &:active {
+        color: $primaryColorPressed;
+        border: 1px solid $primaryColorPressed;
+    }
+}
+
+.n-tertiary {
+    color: $textColor3;
+    border: 1px solid rgb(224, 224, 230);
+
+    &:hover {
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+    }
+
+    &:active {
+        color: $primaryColorPressed;
+        border: 1px solid $primaryColorPressed;
+    }
+}
+
+.n-primary {
+    color: $baseColor;
+    background-color: $primaryColor;
+
+    &:hover {
+        background-color: $primaryColorHover;
+    }
+
+    &:active {
+        background-color: $primaryColorPressed;
+    }
+}
+
+.n-info {
+    color: $baseColor;
+    background-color: $infoColor;
+
+    &:hover {
+        background-color: $infoColorHover;
+    }
+
+    &:active {
+        background-color: $infoColorPressed;
+    }
+}
+
+.n-success {
+    color: $baseColor;
+    background-color: $successColor;
+
+    &:hover {
+        background-color: $successColorHover;
+    }
+
+    &:active {
+        background-color: $successColorPressed;
+    }
+}
+
+.n-warning {
+    color: $baseColor;
+    background-color: $warningColor;
+
+    &:hover {
+        background-color: $warningColorHover;
+    }
+
+    &:active {
+        background-color: $warningColorPressed;
+    }
+}
+
+.n-error {
+    color: $baseColor;
+    background-color: $errorColor;
+
+    &:hover {
+        background-color: $errorColorHover;
+    }
+
+    &:active {
+        background-color: $errorColorPressed;
+    }
+}
+
