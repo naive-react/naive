@@ -16,7 +16,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "craco start",
     "build": "react-scripts build",
     "lint": "./node_modules/.bin/eslint --ext .ts,.tsx ./src/** --quiet --no-error-on-unmatched-pattern",
     "lint:fix": "./node_modules/.bin/eslint --fix --ext .tsx,.ts ./src/** --no-error-on-unmatched-pattern"
