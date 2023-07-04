@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/index.scss';
 
-function App() {
+function App () {
   return (
     <div>naive-react</div>
   );

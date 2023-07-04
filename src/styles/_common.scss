@@ -1,5 +1,5 @@
 @use "sass:map";
-@import "./_variabels";
+@import "./_variables";
 
 $baseColor: map-get(
     $map: $base,
