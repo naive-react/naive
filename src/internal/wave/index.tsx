@@ -1,17 +1,18 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 00:38:14
- * @LastEditTime: 2023-07-05 00:53:40
+ * @LastEditTime: 2023-07-05 11:36:25
  * @LastEditors: shiruiqiang
  * @FilePath: index.tsx
  * @Description: shiruiqiang
  */
 import classNames from 'classnames';
 import {forwardRef, useEffect, useImperativeHandle, useRef, useState} from 'react';
+import {nextTick} from 'process';
+
 import {injecStyle} from 'utils/dynamicInjectStyle';
 
 import './index.scss';
-import {nextTick} from 'process';
 
 interface WaveProps {
   waveSpreadColor: string
@@ -52,5 +53,12 @@ export const Wave = forwardRef<WaveRef, WaveProps>((props, ref) => {
       }, 1000);
     });
   };
+  useEffect(() => {
+    return () => {
+      if (animationTimerId.current !== null) {
+        window.clearTimeout(animationTimerId.current);
+      }
+    };
+  }, []);
   return <div className={ classNames('base-wave', {'base-wave-active': showWave}) }></div>;
 });
