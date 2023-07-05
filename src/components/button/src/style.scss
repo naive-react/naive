@@ -64,7 +64,10 @@
     border-radius: 34px;
     padding: 0 18px;
 }
-
+.n-disabled {
+    opacity: $opacityDisabled;
+    pointer-events: none;
+}
 .n-default-text {
     color: $textColor2;
     &:hover {
@@ -337,4 +340,76 @@
         background-color: $buttonColor2Pressed;
         border: none;
     }
+}
+
+.n-dashed {
+    background-color: #0000;
+    &:hover {
+        background-color: #0000;
+    }
+    &:active {
+        background-color: #0000;
+    }
+}
+
+.n-dashed-default {
+    border: 1px dashed $borderColor;
+    &:hover {
+        border: 1px dashed $primaryColorHover;
+    }
+    &:active {
+        border: 1px dashed $primaryColorHover;
+    }
+}
+.n-dashed-primary {
+    border: 1px dashed $primaryColor;
+}
+
+.n-dashed-info {
+    border: 1px dashed $infoColor;
+}
+.n-dashed-success {
+    border: 1px dashed $successColor;
+}
+.n-dashed-warning {
+    border: 1px dashed $warningColor;
+}
+.n-dashed-error {
+    border: 1px dashed $errorColor;
+}
+
+.n-ghost {
+    background-color: #0000;
+    &:hover {
+        background-color: #0000;
+    }
+    &:active {
+        background-color: #0000;
+    }
+}
+
+.n-ghost-default {
+    border: 1px solid $borderColor;
+    &:hover {
+        border: 1px solid $primaryColorHover;
+    }
+    &:active {
+        border: 1px solid $primaryColorHover;
+    }
+}
+.n-ghost-primary {
+    border: 1px solid $primaryColor;
+}
+
+.n-ghost-info {
+    border: 1px solid $infoColor;
+}
+.n-ghost-success {
+    border: 1px solid $successColor;
+}
+.n-ghost-warning {
+    border: 1px solid $warningColor;
+}
+.n-ghost-error {
+    border: 1px solid $errorColor;
 }

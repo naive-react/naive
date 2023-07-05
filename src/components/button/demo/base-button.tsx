@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-05 14:07:03
+ * @LastEditTime: 2023-07-05 14:44:30
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -54,6 +54,9 @@ export default () => {
     </Card>
     <Card
       label='次要按钮'
+      description={<span>
+        使用<Code>secondary</Code>来使用次要按钮
+      </span>}
     >
       <SpaceButton strong secondary>Default</SpaceButton>
       <SpaceButton strong secondary type='tertiary'>Tertiary</SpaceButton>
@@ -72,6 +75,9 @@ export default () => {
     </Card>
     <Card
       label='次次要按钮'
+      description={<span>
+        使用<Code>lesser</Code>来使用次次要按钮
+      </span>}
     >
       <SpaceButton lesser>Default</SpaceButton>
       <SpaceButton lesser type='primary'>Primary</SpaceButton>
@@ -88,6 +94,9 @@ export default () => {
     </Card>
     <Card
       label='次次次要按钮'
+      description={<span>
+        使用<Code>quaternary</Code>来使用次次次要按钮
+      </span>}
     >
       <SpaceButton quaternary>Default</SpaceButton>
       <SpaceButton quaternary type='primary'>Primary</SpaceButton>
@@ -101,6 +110,66 @@ export default () => {
       <SpaceButton quaternary round type='success'>Success</SpaceButton>
       <SpaceButton quaternary round type='warning'>Warning</SpaceButton>
       <SpaceButton quaternary round type='error'>Error</SpaceButton>
+    </Card>
+    <Card
+      label='虚线按钮'
+      description={<span>
+        使用<Code>dashed</Code>来使用虚线按钮
+      </span>}
+    >
+      <SpaceButton dashed>Default</SpaceButton>
+      <SpaceButton dashed type='primary'>Primary</SpaceButton>
+      <SpaceButton dashed type='info'>Info</SpaceButton>
+      <SpaceButton dashed type='success'>Success</SpaceButton>
+      <SpaceButton dashed type='warning'>Warning</SpaceButton>
+      <SpaceButton dashed type='error'>Error</SpaceButton>
+      <SpaceButton dashed round>Default</SpaceButton>
+      <SpaceButton dashed round type='primary'>Primary</SpaceButton>
+      <SpaceButton dashed round type='info'>Info</SpaceButton>
+      <SpaceButton dashed round type='success'>Success</SpaceButton>
+      <SpaceButton dashed round type='warning'>Warning</SpaceButton>
+      <SpaceButton dashed round type='error'>Error</SpaceButton>
+    </Card>
+    <Card
+      label='透明背景'
+      description={<span>
+         <Code>Ghost</Code>按钮具有透明的背景
+      </span>}
+    >
+      <SpaceButton ghost>Default</SpaceButton>
+      <SpaceButton ghost type='primary'>Primary</SpaceButton>
+      <SpaceButton ghost type='info'>Info</SpaceButton>
+      <SpaceButton ghost type='success'>Success</SpaceButton>
+      <SpaceButton ghost type='warning'>Warning</SpaceButton>
+      <SpaceButton ghost type='error'>Error</SpaceButton>
+      <SpaceButton ghost round>Default</SpaceButton>
+      <SpaceButton ghost round type='primary'>Primary</SpaceButton>
+      <SpaceButton ghost round type='info'>Info</SpaceButton>
+      <SpaceButton ghost round type='success'>Success</SpaceButton>
+      <SpaceButton ghost round type='warning'>Warning</SpaceButton>
+      <SpaceButton ghost round type='error'>Error</SpaceButton>
+    </Card>
+    <Card
+      label='尺寸'
+      description={<span>
+        有<Code>tiny</Code>、<Code>small</Code>、<Code>medium</Code>、<Code>large</Code>尺寸。
+      </span>}
+    >
+      <SpaceButton size='tiny' strong secondary>小小</SpaceButton>
+      <SpaceButton size='small' strong secondary>小</SpaceButton>
+      <SpaceButton size='medium' strong secondary>不小</SpaceButton>
+      <SpaceButton size='large' strong secondary>不不小</SpaceButton>
+    </Card>
+    <Card
+      label='禁用'
+      description={<span>
+         按钮可以被禁用。
+      </span>}
+    >
+      <SpaceButton disabled>不许点</SpaceButton>
+      <SpaceButton disabled type='primary'>不许点</SpaceButton>
+      <SpaceButton disabled secondary type='primary'>不许点</SpaceButton>
+      <SpaceButton disabled lesser type='primary'>不许点</SpaceButton>
     </Card>
   </div>;
 };

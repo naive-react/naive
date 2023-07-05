@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-05 14:08:16
+ * @LastEditTime: 2023-07-05 14:45:52
  * @LastEditors: shiruiqiang
  * @FilePath: button.tsx
  * @Description: shiruiqiang
@@ -27,6 +27,9 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     round = false,
     lesser = false,
     quaternary = false,
+    dashed = false,
+    disabled = false,
+    ghost = false,
     children
   } = props;
   const waveRef = useRef<WaveRef>(null);
@@ -41,8 +44,13 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
       'n-round': round,
       'n-lesser': lesser,
       'n-quaternary': quaternary,
-      'n-base-text': !quaternary && !secondary && !lesser,
-      [`n-secondary-${type}`]: secondary
+      'n-dashed': dashed,
+      'n-ghost': ghost,
+      'n-disabled': disabled,
+      'n-base-text': !quaternary && !secondary && !lesser && !dashed && !ghost,
+      [`n-secondary-${type}`]: secondary,
+      [`n-dashed-${type}`]: dashed,
+      [`n-ghost-${type}`]: ghost
     },
     `n-${type}-text`
   );
