@@ -22,13 +22,8 @@
     "start": "vite",
     "build": "craco build",
     "lint": "./node_modules/.bin/eslint --ext .ts,.tsx ./src/** --quiet --no-error-on-unmatched-pattern",
-    "lint:fix": "./node_modules/.bin/eslint --fix --ext .tsx,.ts ./src/** --no-error-on-unmatched-pattern"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "lint:fix": "./node_modules/.bin/eslint --fix --ext .tsx,.ts ./src/** --no-error-on-unmatched-pattern",
+    "commit": "commit"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
+    "@commitlint/prompt-cli": "^17.6.6",
     "@types/underscore": "^1.11.5",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
@@ -63,7 +59,7 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
-    "husky": "^4.3.8",
+    "husky": "^8.0.0",
     "node-sass": "^7.0.3",
     "pre-commit": "^1.2.2",
     "sass": "^1.63.6",

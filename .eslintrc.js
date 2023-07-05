@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-05 17:48:31
+ * @LastEditTime: 2023-07-05 18:01:51
  * @LastEditors: shiruiqiang
  * @FilePath: .eslintrc.js
  * @Description: shiruiqiang
@@ -63,7 +63,7 @@ module.exports = {
         "@typescript-eslint/promise-function-async": "off",
         "@typescript-eslint/member-delimiter-style": ["error", {
             multiline: {
-                delimiter: 'none',    // 'none' or 'semi' or 'comma'
+                delimiter: 'semi',    // 'none' or 'semi' or 'comma'
                 requireLast: true,
             },
             singleline: {
