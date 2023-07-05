@@ -56,6 +56,15 @@
     font-size: $fontSizeLarge;
 }
 
+.n-strong{
+    font-weight: $fontWeightStrong;
+}
+
+.n-round{
+    border-radius: 34px;
+    padding: 0 18px;
+}
+
 .n-default {
     border: 1px solid rgb(224, 224, 230);
 
@@ -149,4 +158,100 @@
         background-color: $errorColorPressed;
     }
 }
+.n-secondary{
+    border: none;
+    &:hover{
+        border: none;
+    }
+    &:active{
+        border:none;
+    }
+}
+.n-secondary-default{
+    background-color: rgba($color: $buttonColor2, $alpha: 0.05);
+    color: $textColor2;
+    &:hover{
+        background-color: rgba($color: $buttonColor2, $alpha: 0.09);
+        color: $textColor2;
+    }
+    &:active{
+        background-color: rgba($color: $buttonColor2, $alpha: 0.13);
+        color: $textColor2;
+    }
+}
+.n-secondary-tertiary{
+    background-color: rgba($color: $buttonColor2, $alpha: 0.05);
+    color: $textColor3;
+    &:hover{
+        background-color: rgba($color: $buttonColor2, $alpha: 0.09);
+        color: $textColor3;
+    }
+    &:active{
+        background-color: rgba($color: $buttonColor2, $alpha: 0.13);
+        color: $textColor3;
+    }
+}
+.n-secondary-primary{
+    background-color: rgba($color: $primaryColor, $alpha: 0.16);
+    color: $primaryColor;
+    &:hover{
+        background-color: rgba($color: $primaryColor, $alpha: 0.22);
+        color: $primaryColor;
+    }
+    &:active{
+        background-color: rgba($color: $primaryColor, $alpha: 0.28);
+        color: $primaryColor;
+    }
+}
 
+.n-secondary-info{
+    background-color: rgba($color: $infoColor, $alpha: 0.16);
+    color: $infoColor;
+    &:hover{
+        background-color: rgba($color: $infoColor, $alpha: 0.22);
+        color: $infoColor;
+    }
+    &:active{
+        background-color: rgba($color: $infoColor, $alpha: 0.28);
+        color: $infoColor;
+    }
+}
+
+.n-secondary-success{
+    background-color: rgba($color: $successColor, $alpha: 0.16);
+    color: $successColor;
+    &:hover{
+        background-color: rgba($color: $successColor, $alpha: 0.22);
+        color: $successColor;
+    }
+    &:active{
+        background-color: rgba($color: $successColor, $alpha: 0.28);
+        color: $successColor;
+    }
+}
+
+.n-secondary-warning{
+    background-color: rgba($color: $warningColor, $alpha: 0.16);
+    color: $warningColor;
+    &:hover{
+        background-color: rgba($color: $warningColor, $alpha: 0.22);
+        color: $warningColor;
+    }
+    &:active{
+        background-color: rgba($color: $warningColor, $alpha: 0.28);
+        color: $warningColor;
+    }
+}
+
+.n-secondary-error{
+    background-color: rgba($color: $errorColor, $alpha: 0.16);
+    color: $errorColor;
+    &:hover{
+        background-color: rgba($color: $errorColor, $alpha: 0.22);
+        color: $errorColor;
+    }
+    &:active{
+        background-color: rgba($color: $errorColor, $alpha: 0.28);
+        color: $errorColor;
+    }
+}

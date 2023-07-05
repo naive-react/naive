@@ -14,10 +14,24 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     text = false,
     type = 'default',
     size = 'medium',
+    strong = false,
+    secondary = false,
+    round = false,
     children
   } = props;
   const waveRef = useRef<WaveRef>(null);
-  const classes = classNames('n-button', `n-${size}`, `n-${type}`, `n-padding-${size}`);
+  const classes = classNames(
+    'n-button',
+    `n-${size}`,
+    `n-padding-${size}`,
+    `n-${type}`,
+    {
+      'n-strong': strong,
+      'n-secondary': secondary,
+      'n-round': round,
+      [`n-secondary-${type}`]: secondary
+    }
+  );
   const handleClick = (e: SyntheticEvent) => {
     e.preventDefault();
     waveRef.current?.play();
@@ -26,6 +40,8 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     ? <a>{ children}</a>
     : <button className={classes} onClick={handleClick}>
       {children}
-      <Wave waveSpreadColor={ Base[`${type}WaveColor`] } ref={waveRef}></Wave>
+      {
+        !secondary && <Wave waveSpreadColor={ Base[`${type}WaveColor`] } ref={waveRef}></Wave>
+      }
     </button>;
 };
