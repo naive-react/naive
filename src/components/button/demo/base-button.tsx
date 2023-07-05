@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-05 14:44:30
+ * @LastEditTime: 2023-07-05 17:32:07
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -44,7 +44,7 @@ export default () => {
         按钮的<Code>type</Code>分别为<Code>default</Code>、<Code>tertiary</Code>、<Code>primary</Code>、<Code>info</Code>、<Code>success</Code>、<Code>warning</Code> 和 <Code>error</Code>
       </span>}
     >
-      <SpaceButton>Default</SpaceButton>
+      <SpaceButton onClick={(e) => {console.log(e);}}>Default</SpaceButton>
       <SpaceButton type='tertiary'>Tertiary</SpaceButton>
       <SpaceButton type='primary'>Primary</SpaceButton>
       <SpaceButton type='info'>Info</SpaceButton>
@@ -170,6 +170,30 @@ export default () => {
       <SpaceButton disabled type='primary'>不许点</SpaceButton>
       <SpaceButton disabled secondary type='primary'>不许点</SpaceButton>
       <SpaceButton disabled lesser type='primary'>不许点</SpaceButton>
+    </Card>
+    <Card
+      label='文本按钮'
+      description={<span>
+          长得就像文本。
+      </span>}
+    >
+      <SpaceButton text disabled>那车头依然吐着烟</SpaceButton>
+      <SpaceButton text type='primary' onClick={(e) => {console.log(e);}}>那车头依然吐着烟</SpaceButton>
+      <SpaceButton text type='info'>那车头依然吐着烟</SpaceButton>
+      <SpaceButton text type='warning'>那车头依然吐着烟</SpaceButton>
+      <SpaceButton text type='error'>那车头依然吐着烟</SpaceButton>
+    </Card>
+    <Card
+      label='链接按钮'
+      description={<span>
+          使用<Code>link</Code>与<Code>href</Code>来使用链接按钮。
+      </span>}
+    >
+      <SpaceButton link disabled>那车头依然吐着烟</SpaceButton>
+      <SpaceButton link type='primary' href='https://www.baidu.com' onClick={(e) => {e.preventDefault();}}>那车头依然吐着烟</SpaceButton>
+      <SpaceButton link type='info'>那车头依然吐着烟</SpaceButton>
+      <SpaceButton link type='warning'>那车头依然吐着烟</SpaceButton>
+      <SpaceButton link type='error'>那车头依然吐着烟</SpaceButton>
     </Card>
   </div>;
 };

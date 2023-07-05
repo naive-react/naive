@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-05 13:31:00
+ * @LastEditTime: 2023-07-05 17:20:20
  * @LastEditors: shiruiqiang
  * @FilePath: .eslintrc.js
  * @Description: shiruiqiang
@@ -70,7 +70,9 @@ module.exports = {
                 delimiter: 'semi',    // 'semi' or 'comma'
                 requireLast: true,
             },
-        }]
+        }],
+        "@typescript-eslint/strict-boolean-expressions": 'off',
+        "@typescript-eslint/prefer-optional-chain": "off"
     },
     "settings": {
     },

@@ -1,5 +1,6 @@
 @import "../../../styles/common";
 .n-button {
+    @extend .n-cursor-pointer;
     background-color: #0000;
     white-space: nowrap;
     position: relative;
@@ -12,14 +13,15 @@
     font-family: inherit;
     border: none;
     text-align: center;
-    cursor: pointer;
     text-decoration: none;
     line-height: 1;
     border-radius: $borderRadius;
     transition: color 0.3s $cubicBezierEaseInOut, background-color 0.3s $cubicBezierEaseInOut,
         opacity 0.3s $cubicBezierEaseInOut, border-color 0.3s $cubicBezierEaseInOut;
 }
-
+.n-cursor-pointer {
+    cursor: pointer;
+}
 .n-tiny {
     height: $heightTiny;
 }
@@ -67,6 +69,125 @@
 .n-disabled {
     opacity: $opacityDisabled;
     pointer-events: none;
+}
+.n-no-border {
+    border: none !important;
+}
+.n-text {
+    @extend .n-cursor-pointer;
+    color: $textColor2;
+}
+.n-text-default,
+.n-text-tertiary,
+.n-text-primary,
+.n-text-success {
+    @extend .n-text;
+    &:hover {
+        color: $primaryColorHover;
+    }
+    &:active {
+        color: $primaryColorPressed;
+    }
+}
+.n-text-info {
+    @extend .n-text;
+    &:hover {
+        color: $infoColorHover;
+    }
+    &:active {
+        color: $infoColorPressed;
+    }
+}
+.n-text-warning {
+    @extend .n-text;
+    &:hover {
+        color: $warningColorHover;
+    }
+    &:active {
+        color: $warningColorPressed;
+    }
+}
+.n-text-error {
+    @extend .n-text;
+    &:hover {
+        color: $errorColorHover;
+    }
+    &:active {
+        color: $errorColorPressed;
+    }
+}
+
+.n-link {
+    @extend .n-cursor-pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:active {
+        text-decoration: underline;
+    }
+}
+.n-link-default {
+    @extend .n-link;
+    color: $textColor2;
+    &:hover {
+        color: $primaryColorHover;
+    }
+    &:active {
+        color: $primaryColorPressed;
+    }
+}
+
+.n-link-tertiary {
+    @extend .n-link;
+    color: $textColor3;
+    &:hover {
+        color: $primaryColorHover;
+    }
+    &:active {
+        color: $primaryColorPressed;
+    }
+}
+
+.n-link-primary,
+.n-link-success {
+    @extend .n-link;
+    color: $primaryColor;
+    &:hover {
+        color: $primaryColorHover;
+    }
+    &:active {
+        color: $primaryColorPressed;
+    }
+}
+.n-link-info {
+    @extend .n-link;
+    color: $infoColor;
+    &:hover {
+        color: $infoColorHover;
+    }
+    &:active {
+        color: $infoColorPressed;
+    }
+}
+.n-link-warning {
+    @extend .n-link;
+    color: $warningColor;
+    &:hover {
+        color: $warningColorHover;
+    }
+    &:active {
+        color: $warningColorPressed;
+    }
+}
+.n-link-error {
+    @extend .n-link;
+    color: $errorColor;
+    &:hover {
+        color: $errorColorHover;
+    }
+    &:active {
+        color: $errorColorPressed;
+    }
 }
 .n-default-text {
     color: $textColor2;
