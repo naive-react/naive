@@ -1,3 +1,11 @@
+/*
+ * @Author: shiruiqiang
+ * @Date: 2023-07-05 04:40:16
+ * @LastEditTime: 2023-07-05 13:31:00
+ * @LastEditors: shiruiqiang
+ * @FilePath: .eslintrc.js
+ * @Description: shiruiqiang
+ */
 module.exports = {
     "env": {
         "browser": true,
@@ -53,11 +61,17 @@ module.exports = {
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/promise-function-async": "off",
         "@typescript-eslint/promise-function-async": "off",
-        "@typescript-eslint/member-delimiter-style": "error"
+        "@typescript-eslint/member-delimiter-style": ["error", {
+            multiline: {
+                delimiter: 'semi',    // 'none' or 'semi' or 'comma'
+                requireLast: true,
+            },
+            singleline: {
+                delimiter: 'semi',    // 'semi' or 'comma'
+                requireLast: true,
+            },
+        }]
     },
     "settings": {
-        react: {
-            version: "detect",
-        },
     },
 }

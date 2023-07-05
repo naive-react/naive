@@ -1,3 +1,11 @@
+/*
+ * @Author: shiruiqiang
+ * @Date: 2023-07-05 04:40:16
+ * @LastEditTime: 2023-07-05 14:08:16
+ * @LastEditors: shiruiqiang
+ * @FilePath: button.tsx
+ * @Description: shiruiqiang
+ */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 import {PropsWithChildren, SyntheticEvent, useRef} from 'react';
@@ -17,6 +25,8 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     strong = false,
     secondary = false,
     round = false,
+    lesser = false,
+    quaternary = false,
     children
   } = props;
   const waveRef = useRef<WaveRef>(null);
@@ -29,8 +39,12 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
       'n-strong': strong,
       'n-secondary': secondary,
       'n-round': round,
+      'n-lesser': lesser,
+      'n-quaternary': quaternary,
+      'n-base-text': !quaternary && !secondary && !lesser,
       [`n-secondary-${type}`]: secondary
-    }
+    },
+    `n-${type}-text`
   );
   const handleClick = (e: SyntheticEvent) => {
     e.preventDefault();
@@ -41,7 +55,9 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
     : <button className={classes} onClick={handleClick}>
       {children}
       {
-        !secondary && <Wave waveSpreadColor={ Base[`${type}WaveColor`] } ref={waveRef}></Wave>
+        !secondary &&
+        !lesser &&
+        !quaternary && <Wave waveSpreadColor={Base[`${type}WaveColor`]} ref={waveRef}></Wave>
       }
     </button>;
 };

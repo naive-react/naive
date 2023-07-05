@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 00:38:14
- * @LastEditTime: 2023-07-05 11:36:25
+ * @LastEditTime: 2023-07-05 14:09:06
  * @LastEditors: shiruiqiang
  * @FilePath: index.tsx
  * @Description: shiruiqiang
@@ -15,10 +15,10 @@ import {injecStyle} from 'utils/dynamicInjectStyle';
 import './index.scss';
 
 interface WaveProps {
-  waveSpreadColor: string
+  waveSpreadColor: string;
 }
 export interface WaveRef {
-  play: () => void
+  play: () => void;
 }
 export const Wave = forwardRef<WaveRef, WaveProps>((props, ref) => {
   const [showWave, setShowWave] = useState(false);

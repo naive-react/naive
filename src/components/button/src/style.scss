@@ -56,46 +56,118 @@
     font-size: $fontSizeLarge;
 }
 
-.n-strong{
+.n-strong {
     font-weight: $fontWeightStrong;
 }
 
-.n-round{
+.n-round {
     border-radius: 34px;
     padding: 0 18px;
 }
 
-.n-default {
-    border: 1px solid rgb(224, 224, 230);
+.n-default-text {
+    color: $textColor2;
+    &:hover {
+        color: $textColor2;
+    }
+    &:active {
+        color: $textColor2;
+    }
+}
 
+.n-tertiary-text {
+    color: $textColor3;
+    &:hover {
+        color: $textColor3;
+    }
+    &:active {
+        color: $textColor3;
+    }
+}
+
+.n-primary-text {
+    color: $primaryColor;
     &:hover {
         color: $primaryColor;
+    }
+    &:active {
+        color: $primaryColor;
+    }
+}
+.n-info-text {
+    color: $infoColor;
+    &:hover {
+        color: $infoColor;
+    }
+    &:active {
+        color: $infoColor;
+    }
+}
+.n-success-text {
+    color: $primaryColor;
+    &:hover {
+        color: $primaryColor;
+    }
+    &:active {
+        color: $primaryColor;
+    }
+}
+.n-warning-text {
+    color: $warningColor;
+    &:hover {
+        color: $warningColor;
+    }
+    &:active {
+        color: $warningColor;
+    }
+}
+.n-error-text {
+    color: $errorColor;
+    &:hover {
+        color: $errorColor;
+    }
+    &:active {
+        color: $errorColor;
+    }
+}
+.n-default {
+    color: $textColor2 !important;
+    border: 1px solid rgb(224, 224, 230);
+    &:hover {
+        color: $primaryColor !important;
         border: 1px solid $primaryColor;
     }
 
     &:active {
-        color: $primaryColorPressed;
+        color: $primaryColorPressed !important;
         border: 1px solid $primaryColorPressed;
     }
 }
 
 .n-tertiary {
-    color: $textColor3;
+    color: $textColor3 !important;
     border: 1px solid rgb(224, 224, 230);
 
     &:hover {
-        color: $primaryColor;
+        color: $primaryColor !important;
         border: 1px solid $primaryColor;
     }
 
     &:active {
-        color: $primaryColorPressed;
+        color: $primaryColorPressed !important;
         border: 1px solid $primaryColorPressed;
     }
 }
-
-.n-primary {
+.n-base-text {
     color: $baseColor;
+    &:hover {
+        color: $baseColor;
+    }
+    &:active {
+        color: $baseColor;
+    }
+}
+.n-primary {
     background-color: $primaryColor;
 
     &:hover {
@@ -108,7 +180,6 @@
 }
 
 .n-info {
-    color: $baseColor;
     background-color: $infoColor;
 
     &:hover {
@@ -121,7 +192,6 @@
 }
 
 .n-success {
-    color: $baseColor;
     background-color: $successColor;
 
     &:hover {
@@ -134,7 +204,6 @@
 }
 
 .n-warning {
-    color: $baseColor;
     background-color: $warningColor;
 
     &:hover {
@@ -147,7 +216,6 @@
 }
 
 .n-error {
-    color: $baseColor;
     background-color: $errorColor;
 
     &:hover {
@@ -158,100 +226,115 @@
         background-color: $errorColorPressed;
     }
 }
-.n-secondary{
+.n-secondary {
     border: none;
-    &:hover{
+    &:hover {
         border: none;
     }
-    &:active{
-        border:none;
+    &:active {
+        border: none;
     }
 }
-.n-secondary-default{
+.n-secondary-default {
+    @extend .n-default-text;
     background-color: rgba($color: $buttonColor2, $alpha: 0.05);
-    color: $textColor2;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $buttonColor2, $alpha: 0.09);
-        color: $textColor2;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $buttonColor2, $alpha: 0.13);
-        color: $textColor2;
     }
 }
-.n-secondary-tertiary{
+.n-secondary-tertiary {
+    @extend .n-tertiary-text;
     background-color: rgba($color: $buttonColor2, $alpha: 0.05);
-    color: $textColor3;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $buttonColor2, $alpha: 0.09);
-        color: $textColor3;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $buttonColor2, $alpha: 0.13);
-        color: $textColor3;
     }
 }
-.n-secondary-primary{
+.n-secondary-primary {
+    @extend .n-primary-text;
     background-color: rgba($color: $primaryColor, $alpha: 0.16);
-    color: $primaryColor;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $primaryColor, $alpha: 0.22);
-        color: $primaryColor;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $primaryColor, $alpha: 0.28);
-        color: $primaryColor;
     }
 }
 
-.n-secondary-info{
+.n-secondary-info {
+    @extend .n-info-text;
     background-color: rgba($color: $infoColor, $alpha: 0.16);
-    color: $infoColor;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $infoColor, $alpha: 0.22);
-        color: $infoColor;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $infoColor, $alpha: 0.28);
-        color: $infoColor;
     }
 }
 
-.n-secondary-success{
+.n-secondary-success {
+    @extend .n-success-text;
     background-color: rgba($color: $successColor, $alpha: 0.16);
-    color: $successColor;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $successColor, $alpha: 0.22);
-        color: $successColor;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $successColor, $alpha: 0.28);
-        color: $successColor;
     }
 }
 
-.n-secondary-warning{
+.n-secondary-warning {
+    @extend .n-warning-text;
     background-color: rgba($color: $warningColor, $alpha: 0.16);
-    color: $warningColor;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $warningColor, $alpha: 0.22);
-        color: $warningColor;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $warningColor, $alpha: 0.28);
-        color: $warningColor;
     }
 }
 
-.n-secondary-error{
+.n-secondary-error {
+    @extend .n-error-text;
     background-color: rgba($color: $errorColor, $alpha: 0.16);
-    color: $errorColor;
-    &:hover{
+    &:hover {
         background-color: rgba($color: $errorColor, $alpha: 0.22);
-        color: $errorColor;
     }
-    &:active{
+    &:active {
         background-color: rgba($color: $errorColor, $alpha: 0.28);
-        color: $errorColor;
+    }
+}
+
+.n-lesser {
+    background-color: $buttonColor2;
+    border: none;
+    &:hover {
+        background-color: $buttonColor2Hover;
+        border: none;
+    }
+
+    &:active {
+        background-color: $buttonColor2Pressed;
+        border: none;
+    }
+}
+
+.n-quaternary {
+    border: none;
+    background-color: #0000;
+
+    &:hover {
+        background-color: $buttonColor2Hover;
+        border: none;
+    }
+
+    &:active {
+        background-color: $buttonColor2Pressed;
+        border: none;
     }
 }

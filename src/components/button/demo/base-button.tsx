@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-05 15:00:29
+ * @LastEditTime: 2023-07-05 14:07:03
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -29,8 +29,8 @@ const Code = ({children}: PropsWithChildren<unknown>) => {
     margin: '0 0.5em'
   }}>{children}</code>;
 };
-const Card = ({label, description, children}: PropsWithChildren<{label: string, description?: ReactNode}>) => {
-  return <div style={{display: 'flex', width: '45%', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid rgb(239, 239, 245)', padding: '19px 24px'}}>
+const Card = ({label, description, children}: PropsWithChildren<{label: string; description?: ReactNode;}>) => {
+  return <div style={{display: 'flex', width: '45%', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid rgb(239, 239, 245)', padding: '19px 24px', marginBottom: '20px'}}>
     <div style={{fontSize: '18px', color: '#000', fontWeight: 500}}>{label}</div>
     <div style={{lineHeight: 1.6, margin: '16px 0 16px 0', fontWeight: 400}}>{description}</div>
     <div>{children}</div>
@@ -69,6 +69,38 @@ export default () => {
       <SpaceButton strong secondary round type='success'>Success</SpaceButton>
       <SpaceButton strong secondary round type='warning'>Warning</SpaceButton>
       <SpaceButton strong secondary round type='error'>Error</SpaceButton>
+    </Card>
+    <Card
+      label='次次要按钮'
+    >
+      <SpaceButton lesser>Default</SpaceButton>
+      <SpaceButton lesser type='primary'>Primary</SpaceButton>
+      <SpaceButton lesser type='info'>Info</SpaceButton>
+      <SpaceButton lesser type='success'>Success</SpaceButton>
+      <SpaceButton lesser type='warning'>Warning</SpaceButton>
+      <SpaceButton lesser type='error'>Error</SpaceButton>
+      <SpaceButton lesser round>Default</SpaceButton>
+      <SpaceButton lesser round type='primary'>Primary</SpaceButton>
+      <SpaceButton lesser round type='info'>Info</SpaceButton>
+      <SpaceButton lesser round type='success'>Success</SpaceButton>
+      <SpaceButton lesser round type='warning'>Warning</SpaceButton>
+      <SpaceButton lesser round type='error'>Error</SpaceButton>
+    </Card>
+    <Card
+      label='次次次要按钮'
+    >
+      <SpaceButton quaternary>Default</SpaceButton>
+      <SpaceButton quaternary type='primary'>Primary</SpaceButton>
+      <SpaceButton quaternary type='info'>Info</SpaceButton>
+      <SpaceButton quaternary type='success'>Success</SpaceButton>
+      <SpaceButton quaternary type='warning'>Warning</SpaceButton>
+      <SpaceButton quaternary type='error'>Error</SpaceButton>
+      <SpaceButton quaternary round>Default</SpaceButton>
+      <SpaceButton quaternary round type='primary'>Primary</SpaceButton>
+      <SpaceButton quaternary round type='info'>Info</SpaceButton>
+      <SpaceButton quaternary round type='success'>Success</SpaceButton>
+      <SpaceButton quaternary round type='warning'>Warning</SpaceButton>
+      <SpaceButton quaternary round type='error'>Error</SpaceButton>
     </Card>
   </div>;
 };
