@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-04 21:48:20
+ * @LastEditTime: 2023-07-05 09:53:23
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -24,5 +24,6 @@ export default () => {
     <SpaceButton type='success'>Success</SpaceButton>
     <SpaceButton type='warning'>Warning</SpaceButton>
     <SpaceButton type='error'>Error</SpaceButton>
+    <SpaceButton text>Text</SpaceButton>
   </>;
 };
