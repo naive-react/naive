@@ -22,5 +22,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci --registry=https://registry.npm.taobao.org
+    - run: npm config set registry=https://registry.npm.taobao.org
+    - run: npm ci
     - run: npm run test
