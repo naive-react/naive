@@ -50,7 +50,7 @@ export const Tag = (props: PropsWithChildren<TagProps>) => {
       onClick={handleCheck}
     >
       <span className="n-tag__content">{children}</span>
-      {(border || !checkable) && <span style={{borderColor: color?.borderColor}} className={borderClasses}></span>}
+      {!(!border || checkable) && <span style={{borderColor: color?.borderColor}} className={borderClasses}></span> }
     </div>
   );
 };
