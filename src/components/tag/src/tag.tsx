@@ -13,7 +13,7 @@ export const Tag = (props: PropsWithChildren<TagProps>) => {
     disabled = false,
     round = false,
     size = 'medium',
-    // strong = false,
+    strong = false,
     // triggerClickOnClose = false,
     type = 'default',
     // onClose,
@@ -30,7 +30,8 @@ export const Tag = (props: PropsWithChildren<TagProps>) => {
       'n-tag-disabled': disabled,
       'n-tag-round': round,
       'n-tag-checkable': checkable,
-      'n-tag-checked': checked
+      'n-tag-checked': checked,
+      'n-tag-strong': strong
     }
   );
   const borderClasses = classNames('n-tag__border', `n-tag-border-${type}`);

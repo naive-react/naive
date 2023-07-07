@@ -45,7 +45,6 @@ $padding: 0 7px; // 自身的
 }
 
 // 主题色
-$defaultColor: rgb(51, 54, 57);
 $defaultBgColor: rgb(250, 250, 252); // 自身的
 @each $type, $textColor, $borderColor,
   $bgColor in (default $textColor2 $borderColor $defaultBgColor),
@@ -67,6 +66,9 @@ $defaultBgColor: rgb(250, 250, 252); // 自身的
 .n-tag-disabled {
   cursor: not-allowed !important;
   opacity: 0.5;
+}
+.n-tag-strong {
+  font-weight: $fontWeightStrong;
 }
 .n-tag-checkable {
   cursor: pointer;
