@@ -9,6 +9,7 @@
  * test：新增测试用例或是更新现有测试
  * build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
  * revert：回滚某个更早之前的提交
+ * merge：合并代码 格式尽量使用 merge(base): dev into main
 */
 module.exports = {
     extends: [
@@ -16,7 +17,7 @@ module.exports = {
     ],
     rules: {
         'type-enum': [2, 'always', [
-            'feature', 'update', 'fixbug', 'refactor', 'style', 'docs', 'revert'
+            'feature', 'update', 'fixbug', 'refactor', 'style', 'docs', 'revert', 'merge'
         ]],
         'type-case': [0],
         'type-empty': [0],
