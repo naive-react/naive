@@ -3,7 +3,7 @@
 
 name: test CI
 
-on:[push]
+on: [push]
 
 jobs:
   test:
