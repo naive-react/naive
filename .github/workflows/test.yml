@@ -22,5 +22,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
+    - run: |
+          if [ -e package-lock.json ]; then
+          npm ci
+          else
+          npm i
+          fi
     - run: npm run test
