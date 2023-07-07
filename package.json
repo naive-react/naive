@@ -23,7 +23,9 @@
     "build": "craco build",
     "lint": "./node_modules/.bin/eslint --ext .ts,.tsx ./src/** --quiet --no-error-on-unmatched-pattern",
     "lint:fix": "./node_modules/.bin/eslint --fix --ext .tsx,.ts ./src/** --no-error-on-unmatched-pattern",
-    "commit": "commit"
+    "commit": "commit",
+    "test": "react-scripts test",
+    "clear": "npm dedupe && npm prune && npm install --registry=https://registry.npm.taobao.org"
   },
   "eslintConfig": {
     "extends": [
@@ -44,12 +46,16 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-react": "^7.22.5",
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-conventional": "^17.6.6",
     "@commitlint/prompt-cli": "^17.6.6",
+    "@types/testing-library__jest-dom": "^5.14.7",
     "@types/underscore": "^1.11.5",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
+    "babel-jest": "^29.6.1",
     "babel-plugin-react-require": "^4.0.0",
     "classnames": "^2.3.2",
     "craco": "^0.0.3",
@@ -60,8 +66,10 @@
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "husky": "^8.0.0",
+    "jest": "^27.5.1",
     "node-sass": "^7.0.3",
     "pre-commit": "^1.2.2",
+    "react-test-renderer": "^18.2.0",
     "sass": "^1.63.6",
     "typescript": "^4.5.2",
     "vite": "^4.3.9"
