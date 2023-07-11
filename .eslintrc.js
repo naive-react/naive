@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-05 18:01:51
+ * @LastEditTime: 2023-07-11 20:13:21
  * @LastEditors: shiruiqiang
  * @FilePath: .eslintrc.js
  * @Description: shiruiqiang
@@ -72,7 +72,8 @@ module.exports = {
             },
         }],
         "@typescript-eslint/strict-boolean-expressions": 'off',
-        "@typescript-eslint/prefer-optional-chain": "off"
+        "@typescript-eslint/prefer-optional-chain": "off",
+        "@typescript-eslint/no-confusing-void-expression": "off"
     },
     "settings": {
     },

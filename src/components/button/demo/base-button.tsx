@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-05 17:32:07
+ * @LastEditTime: 2023-07-11 20:11:44
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -166,7 +166,7 @@ export default () => {
          按钮可以被禁用。
       </span>}
     >
-      <SpaceButton disabled>不许点</SpaceButton>
+      <SpaceButton disabled onClick={() => console.log('disabled')}>不许点</SpaceButton>
       <SpaceButton disabled type='primary'>不许点</SpaceButton>
       <SpaceButton disabled secondary type='primary'>不许点</SpaceButton>
       <SpaceButton disabled lesser type='primary'>不许点</SpaceButton>

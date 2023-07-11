@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-05 17:31:51
+ * @LastEditTime: 2023-07-11 20:15:16
  * @LastEditors: shiruiqiang
  * @FilePath: button.tsx
  * @Description: shiruiqiang
@@ -88,7 +88,7 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
       onClick={handleClick}
     >{children}</a>;
   } else {
-    return <button className={classes} onClick={handleClick} >
+    return <button disabled={disabled} className={classes} onClick={handleClick} >
       {children}
       {
         !secondary &&
