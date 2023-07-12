@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-11 20:11:44
+ * @LastEditTime: 2023-07-12 10:38:22
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -14,7 +14,7 @@ const SpaceButton = (props: PropsWithChildren<ButtonProps>) => {
     <Button {...props}>{ props.children}</Button>
   </div>;
 };
-const Code = ({children}: PropsWithChildren<unknown>) => {
+export const Code = ({children}: PropsWithChildren<unknown>) => {
   return <code style={{
     display: 'inline-block',
     lineHeight: 1.4,
@@ -29,7 +29,7 @@ const Code = ({children}: PropsWithChildren<unknown>) => {
     margin: '0 0.5em'
   }}>{children}</code>;
 };
-const Card = ({label, description, children}: PropsWithChildren<{label: string; description?: ReactNode;}>) => {
+export const Card = ({label, description, children}: PropsWithChildren<{label: string; description?: ReactNode;}>) => {
   return <div style={{display: 'flex', width: '45%', flexDirection: 'column', alignItems: 'flex-start', border: '1px solid rgb(239, 239, 245)', padding: '19px 24px', marginBottom: '20px'}}>
     <div style={{fontSize: '18px', color: '#000', fontWeight: 500}}>{label}</div>
     <div style={{lineHeight: 1.6, margin: '16px 0 16px 0', fontWeight: 400}}>{description}</div>

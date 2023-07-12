@@ -1,0 +1,21 @@
+@use "sass:map";
+@import "../../../styles/_common.scss";
+
+@for $depth from 1 through 5 {
+    .n-icon-opacity-#{$depth} {
+        opacity: map-get($map: $base, $key: alpha#{$depth});
+    }
+}
+
+.n-icon-wrapper {
+    background-color: $primaryColor;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > i {
+        vertical-align: middle;
+        display: flex;
+        align-items: center;
+    }
+}

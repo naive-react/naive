@@ -6,7 +6,12 @@
                 "src/*"
             ],
             "components/*": [
-                "src/components/*"
+                "src/components/*",
+                "src/styles/*",
+                "src/hooks/*",
+                "src/internal/*",
+                "src/utils/*",
+                "src/type/*"
             ],
             "utils/*": [
                 "src/utils/*"
