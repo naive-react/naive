@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:28:31
- * @LastEditTime: 2023-07-12 11:06:40
+ * @LastEditTime: 2023-07-12 13:36:37
  * @LastEditors: shiruiqiang
  * @FilePath: vite.config.js
  * @Description: shiruiqiang
@@ -10,14 +10,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 export default defineConfig({
-    plugins: [react({
-        babel: {
-            plugins: [
-                'react-require',
-                'react-html-attrs'
-            ]
-        }
-    })],
+    plugins: [react()],
     resolve: {
         alias: {
             '@': resolve('src'),

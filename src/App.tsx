@@ -14,9 +14,9 @@ import './styles/index.scss';
 const RootComponent = React.lazy(() => import('./components/icon/demo/base-icon'));
 
 function App () {
-  return (
-    <RootComponent></RootComponent>
-  );
+    return (
+        <RootComponent></RootComponent>
+    );
 }
 
 export default App;

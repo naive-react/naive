@@ -65,8 +65,6 @@
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@vitejs/plugin-react": "^4.0.1",
     "babel-jest": "^29.6.1",
-    "babel-plugin-react-html-attrs": "^3.0.5",
-    "babel-plugin-react-require": "^4.0.0",
     "classnames": "^2.3.2",
     "craco": "^0.0.3",
     "eslint": "^8.39.0",

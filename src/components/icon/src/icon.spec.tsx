@@ -13,9 +13,9 @@ import {CashOutline} from '@ricons/ionicons5';
 import {Icon} from './icon';
 
 describe('icon component', () => {
-  it('default icon', () => {
-    const icon = render(<Icon><CashOutline /></Icon>);
-    const wrapper = icon.container.getElementsByClassName('xicon')[0];
-    expect(wrapper).toBeInTheDocument();
-  });
+    it('default icon', () => {
+        const icon = render(<Icon><CashOutline /></Icon>);
+        const wrapper = icon.container.getElementsByClassName('xicon')[0];
+        expect(wrapper).toBeInTheDocument();
+    });
 });

@@ -11,16 +11,16 @@ import {CSSProperties, ReactNode} from 'react';
 type DepthType = 1 | 2 | 3 | 4 | 5;
 
 export interface IconProps {
-  size?: number | string;
-  color?: string;
-  depth?: DepthType;
-  component?: ReactNode;
+    size?: number | string;
+    color?: string;
+    depth?: DepthType;
+    component?: ReactNode;
 }
 
 export interface IconWrapperProps {
-  size?: number | string;
-  color?: string;
-  className?: string;
-  styles?: CSSProperties;
-  'border-radius'?: number;
+    size?: number | string;
+    color?: string;
+    className?: string;
+    styles?: CSSProperties;
+    'border-radius'?: number;
 }

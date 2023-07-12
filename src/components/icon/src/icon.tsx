@@ -14,22 +14,22 @@ import {IconProps, IconWrapperProps} from './type';
 import './style.scss';
 
 export const Icon = (props: PropsWithChildren<IconProps>) => {
-  const {size, color, depth, component, children} = props;
-  const classes = classNames({[`n-icon-opacity-${depth ?? 1}`]: depth});
-  return <i className={classes}>
-    <RIcon size={size} color={color}>{ component ?? children }</RIcon>
-  </i>;
+    const {size, color, depth, component, children} = props;
+    const classes = classNames({[`n-icon-opacity-${depth ?? 1}`]: depth});
+    return <i className={classes}>
+        <RIcon size={size} color={color}>{ component ?? children }</RIcon>
+    </i>;
 };
 
 export const IconWrapper = (props: PropsWithChildren<IconWrapperProps>) => {
-  const {size = 24, color, children} = props;
-  return <div style={{
-    width: size,
-    height: size,
-    backgroundColor: color,
-    borderRadius: props['border-radius'],
-    ...props.styles
-  }} className={classNames(props.className, 'n-icon-wrapper')}>
-    {children}
-  </div>;
+    const {size = 24, color, children} = props;
+    return <div style={{
+        width: size,
+        height: size,
+        backgroundColor: color,
+        borderRadius: props['border-radius'],
+        ...props.styles
+    }} className={classNames(props.className, 'n-icon-wrapper')}>
+        {children}
+    </div>;
 };

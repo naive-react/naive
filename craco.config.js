@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 15:40:20
- * @LastEditTime: 2023-07-12 11:07:47
+ * @LastEditTime: 2023-07-12 13:09:19
  * @LastEditors: shiruiqiang
  * @FilePath: craco.config.js
  * @Description: shiruiqiang
@@ -18,9 +18,5 @@ module.exports = {
             type: path.resolve(__dirname, './src/type/'),
             internal: path.resolve(__dirname, './src/internal/'),
         },
-
-    },
-    babel: {
-        plugins: ['react-require', 'react-html-attrs'],
-    },
+    }
 }
