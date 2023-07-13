@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-13 21:23:07
+ * @LastEditTime: 2023-07-13 21:47:35
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -212,8 +212,21 @@ export default () => {
             <SpaceButton loading={loading} type='primary' secondary onClick={() => setLoading(true)}>点我</SpaceButton>
             <SpaceButton loading={loading} type='info' disabled lesser onClick={() => setLoading(true)}>点我</SpaceButton>
             <SpaceButton loading={loading} type='success' quaternary onClick={() => setLoading(true)}>点我</SpaceButton>
-            <SpaceButton loading={loading} type='warning' text onClick={() => setLoading(true)}>点我</SpaceButton>
-            <SpaceButton loading={loading} type='error' link onClick={() => setLoading(true)}>点我</SpaceButton>
+        </Card>
+        <Card
+            label='图标按钮'
+            description={<span>
+                在按钮上使用图标，可以使用<Code>icon</Code>属性或者<Code>children插槽</Code>
+            </span>}
+        >
+            <SpaceButton icon={<Icon><CashOutline/></Icon>} strong>加100元</SpaceButton>
+            <SpaceButton size='tiny' strong type='tertiary' icon={<Icon><CashOutline/></Icon>}>加100元</SpaceButton>
+            <SpaceButton type='primary' secondary >
+                <span style={{marginRight: '6px'}}>加100元</span>
+                <Icon><CashOutline/></Icon>
+            </SpaceButton>
+            <SpaceButton type='info' disabled lesser icon={<Icon><CashOutline/></Icon>}>加100元</SpaceButton>
+            <SpaceButton type='success' quaternary icon={<Icon><CashOutline/></Icon>}>加100元</SpaceButton>
         </Card>
     </div>;
 };

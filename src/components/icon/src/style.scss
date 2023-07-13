@@ -7,16 +7,17 @@
     }
 }
 
-.n-icon {
-    height: 1em;
-    width: 1em;
-    line-height: 1em;
-    text-align: center;
-    display: inline-block;
-    position: relative;
-    fill: currentColor;
-    transform: translateZ(0);
+.icon-wrapper {
+    line-height: 0;
     vertical-align: middle;
+    .n-icon {
+        text-align: center;
+        display: inline-block;
+        position: relative;
+        fill: currentColor;
+        transform: translateZ(0);
+        vertical-align: middle;
+    }
 }
 
 .n-icon-wrapper {

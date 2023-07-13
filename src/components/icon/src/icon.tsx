@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-12 09:17:33
- * @LastEditTime: 2023-07-13 19:04:06
+ * @LastEditTime: 2023-07-13 21:48:15
  * @LastEditors: shiruiqiang
  * @FilePath: icon.tsx
  * @Description: shiruiqiang
@@ -14,13 +14,15 @@ import {IconProps, IconWrapperProps} from './type';
 import './style.scss';
 
 export const Icon = (props: PropsWithChildren<IconProps>) => {
-    const {size, color, depth, component, children} = props;
+    const {size = 18, color, depth, component, children} = props;
     const classes = classNames('n-icon', {
         [`n-icon-opacity-${depth ?? 1}`]: depth
     });
-    return <i className={classes} role='img'>
-        <RIcon size={size} color={color}>{ component ?? children }</RIcon>
-    </i>;
+    return <div className='icon-wrapper'>
+        <i className={classes} role='img'>
+            <RIcon size={size} color={color}>{component ?? children}</RIcon>
+        </i>
+    </div>;
 };
 
 export const IconWrapper = (props: PropsWithChildren<IconWrapperProps>) => {

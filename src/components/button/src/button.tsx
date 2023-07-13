@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-13 21:24:41
+ * @LastEditTime: 2023-07-13 21:32:30
  * @LastEditors: shiruiqiang
  * @FilePath: button.tsx
  * @Description: shiruiqiang
@@ -106,9 +106,7 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
                 </div>
 
             }
-            <div>
-                {children}
-            </div>
+            {children}
             {
                 !secondary && !lesser && !quaternary && <Wave waveSpreadColor={Base[`${type}WaveColor`]} ref={waveRef}></Wave>
             }
