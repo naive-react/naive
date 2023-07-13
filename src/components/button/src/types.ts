@@ -1,17 +1,20 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 14:39:41
- * @LastEditTime: 2023-07-05 17:31:46
+ * @LastEditTime: 2023-07-13 16:50:35
  * @LastEditors: shiruiqiang
  * @FilePath: types.ts
  * @Description: shiruiqiang
  */
-import {HTMLAttributeAnchorTarget, MouseEvent} from 'react';
+import {HTMLAttributeAnchorTarget, MouseEvent, ReactNode} from 'react';
 import {type Size} from '../../../type/shape';
 
 type Type = 'default' | 'tertiary' | 'primary' | 'info' | 'success' | 'warning' | 'error'
 
 export interface ButtonProps {
+    icon?: ReactNode;
+    // 加载中
+    loading?: boolean;
     // 文本按钮
     text?: boolean;
     // 圆角按钮

@@ -7,6 +7,18 @@
     }
 }
 
+.n-icon {
+    height: 1em;
+    width: 1em;
+    line-height: 1em;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    fill: currentColor;
+    transform: translateZ(0);
+    vertical-align: middle;
+}
+
 .n-icon-wrapper {
     background-color: $primaryColor;
     border-radius: 6px;

@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-11 20:15:16
+ * @LastEditTime: 2023-07-13 21:24:41
  * @LastEditors: shiruiqiang
  * @FilePath: button.tsx
  * @Description: shiruiqiang
@@ -16,11 +16,12 @@ import {ButtonProps} from './types';
 import {Base} from '../../../styles';
 import {Wave, WaveRef} from '../../../internal/wave';
 import {warn} from 'utils/warn';
-
+import {Loading} from 'internal/loading';
 import './style.scss';
 
 export const Button = (props: PropsWithChildren<ButtonProps>) => {
     const {
+        loading = false,
         text = false,
         type = 'default',
         size = 'medium',
@@ -36,6 +37,7 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
         link = false,
         target = '__blank',
         href,
+        icon = null,
         className,
         onClick,
         children
@@ -47,6 +49,7 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
         `n-${size}`,
         `n-padding-${size}`,
         `n-${type}`,
+        `n-${type}-text`,
         {
             'n-strong': strong,
             'n-secondary': secondary,
@@ -58,18 +61,20 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
             'n-disabled': disabled,
             'n-no-border': !bordered,
             'n-base-text': !quaternary && !secondary && !lesser && !dashed && !ghost,
+            'n-loading': loading,
             [`n-secondary-${type}`]: secondary,
             [`n-dashed-${type}`]: dashed,
             [`n-ghost-${type}`]: ghost
-        },
-        `n-${type}-text`
+        }
     );
     const handleClick = (e: MouseEvent) => {
-        if (onClick && typeof onClick === 'function') {
-            onClick(e);
-        }
-        if (!secondary && !lesser && !quaternary) {
-            waveRef.current?.play();
+        if (!disabled && !loading) {
+            if (onClick && typeof onClick === 'function') {
+                onClick(e);
+            }
+            if (!secondary && !lesser && !quaternary) {
+                waveRef.current?.play();
+            }
         }
     };
     if (link && !href) {
@@ -89,11 +94,23 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
         >{children}</a>;
     } else {
         return <button disabled={disabled} className={classes} onClick={handleClick} >
-            {children}
             {
-                !secondary &&
-        !lesser &&
-        !quaternary && <Wave waveSpreadColor={Base[`${type}WaveColor`]} ref={waveRef}></Wave>
+                (icon ?? loading) && <div className='icon'>
+                    {
+                        loading
+                            ? <Loading
+                                strokeWidth={20}
+                            ></Loading>
+                            : icon
+                    }
+                </div>
+
+            }
+            <div>
+                {children}
+            </div>
+            {
+                !secondary && !lesser && !quaternary && <Wave waveSpreadColor={Base[`${type}WaveColor`]} ref={waveRef}></Wave>
             }
         </button>;
     }

@@ -1,4 +1,5 @@
 @import "../../../styles/common";
+
 .n-button {
     @extend .n-cursor-pointer;
     background-color: #0000;
@@ -16,48 +17,41 @@
     text-decoration: none;
     line-height: 1;
     border-radius: $borderRadius;
-    transition: color 0.3s $cubicBezierEaseInOut, background-color 0.3s $cubicBezierEaseInOut,
-        opacity 0.3s $cubicBezierEaseInOut, border-color 0.3s $cubicBezierEaseInOut;
+    transition:
+        color 0.3s $cubicBezierEaseInOut,
+        background-color 0.3s $cubicBezierEaseInOut,
+        opacity 0.3s $cubicBezierEaseInOut,
+        border-color 0.3s $cubicBezierEaseInOut,
+        width 0.3s $cubicBezierEaseInOut,
+        height 0.3s $cubicBezierEaseInOut;
+    .icon {
+        margin-right: 6px;
+    }
 }
 .n-cursor-pointer {
     cursor: pointer;
 }
-.n-tiny {
-    height: $heightTiny;
+.n-loading {
+    cursor: wait;
 }
-
-.n-small {
-    height: $heightSmall;
+// 尺寸
+@each $name, $height, $paddingVertical,
+    $fontType
+        in (
+            ("tiny", $heightTiny, 6px, $fontSizeTiny),
+            ("small", $heightSmall, 10px, $fontSizeSmall),
+            ("medium", $heightMedium, 14px, $fontSizeMedium),
+            ("large", $heightLarge, 18px, $fontSizeLarge)
+        )
+{
+    .n-#{$name} {
+        height: #{$height};
+    }
+    .n-padding-#{$name} {
+        padding: 0 #{$paddingVertical};
+        font-size: #{$fontType};
+    }
 }
-
-.n-medium {
-    height: $heightMedium;
-}
-
-.n-large {
-    height: $heightLarge;
-}
-
-.n-padding-tiny {
-    padding: 0 6px;
-    font-size: $fontSizeTiny;
-}
-
-.n-padding-small {
-    padding: 0 10px;
-    font-size: $fontSizeSmall;
-}
-
-.n-padding-medium {
-    padding: 0 14px;
-    font-size: $fontSizeMedium;
-}
-
-.n-padding-large {
-    padding: 0 18px;
-    font-size: $fontSizeLarge;
-}
-
 .n-strong {
     font-weight: $fontWeightStrong;
 }
@@ -73,187 +67,122 @@
 .n-no-border {
     border: none !important;
 }
+.n-base-text {
+    color: $baseColor !important;
+    &:hover {
+        color: $baseColor !important;
+    }
+    &:active,
+    &:focus {
+        color: $baseColor !important;
+    }
+}
 .n-text {
     @extend .n-cursor-pointer;
     color: $textColor2;
 }
+// text-type
 .n-text-default,
 .n-text-tertiary,
-.n-text-primary,
-.n-text-success {
+.n-text-primary {
     @extend .n-text;
     &:hover {
-        color: $primaryColorHover;
+        color: $primaryColorHover !important;
     }
     &:active {
-        color: $primaryColorPressed;
+        color: $primaryColorPressed !important;
+    }
+    &:focus {
+        color: $primaryColorSuppl !important;
     }
 }
-.n-text-info {
-    @extend .n-text;
-    &:hover {
-        color: $infoColorHover;
-    }
-    &:active {
-        color: $infoColorPressed;
-    }
-}
-.n-text-warning {
-    @extend .n-text;
-    &:hover {
-        color: $warningColorHover;
-    }
-    &:active {
-        color: $warningColorPressed;
-    }
-}
-.n-text-error {
-    @extend .n-text;
-    &:hover {
-        color: $errorColorHover;
-    }
-    &:active {
-        color: $errorColorPressed;
+@each $name, $hoverColor, $activeColor,
+    $supplyColor
+        in (
+            ("info", $primaryColorHover, $primaryColorPressed, $primaryColorSuppl),
+            ("success", $successColorHover, $successColorPressed, $successColorSuppl),
+            ("warning", $warningColorHover, $warningColorPressed, $warningColorSuppl),
+            ("error", $errorColorHover, $errorColorPressed, $errorColorSuppl)
+        )
+{
+    .n-text-#{$name} {
+        @extend .n-text;
+        &:hover {
+            color: #{$hoverColor} !important;
+        }
+        &:active {
+            color: #{$activeColor} !important;
+        }
+        &:focus {
+            color: #{$supplyColor} !important;
+        }
     }
 }
-
+// link
 .n-link {
     @extend .n-cursor-pointer;
     &:hover {
         text-decoration: underline;
     }
-    &:active {
+    &:active,
+    &:focus {
         text-decoration: underline;
     }
 }
-.n-link-default {
-    @extend .n-link;
-    color: $textColor2;
-    &:hover {
-        color: $primaryColorHover;
+
+@each $name, $color, $hoverColor, $activeColor,
+    $supplyColor
+        in (
+            ("default", $textColor2, $primaryColorHover, $primaryColorPressed, $primaryColorSuppl),
+            ("tertiary", $textColor3, $primaryColorHover, $primaryColorPressed, $primaryColorSuppl),
+            ("primary", $primaryColor, $primaryColorHover, $primaryColorPressed, $primaryColorSuppl),
+            ("info", $infoColor, $infoColorHover, $infoColorPressed, $infoColorSuppl),
+            ("success", $successColor, $successColorHover, $successColorPressed, $successColorSuppl),
+            ("warning", $warningColor, $warningColorHover, $warningColorPressed, $warningColorSuppl),
+            ("error", $errorColor, $errorColorHover, $errorColorPressed, $errorColorSuppl)
+        )
+{
+    .n-link-#{$name} {
+        @extend .n-link;
+        color: #{$color};
+        &:hover {
+            color: #{$hoverColor};
+        }
+        &:active {
+            color: #{$activeColor};
+        }
+        &:focus {
+            color: #{$supplyColor};
+        }
     }
-    &:active {
-        color: $primaryColorPressed;
+}
+// text
+@each $name, $color, $hoverColor, $activeColor,
+    $supplyColor
+        in (
+            ("default", $textColor2, $textColor2, $textColor2, $textColor2),
+            ("tertiary", $textColor3, $textColor3, $textColor3, $textColor3),
+            ("primary", $primaryColor, $primaryColor, $primaryColor, $primaryColor),
+            ("info", $infoColor, $infoColor, $infoColor, $infoColor),
+            ("success", $successColor, $successColor, $successColor, $successColor),
+            ("warning", $warningColor, $warningColor, $warningColor, $warningColor),
+            ("error", $errorColor, $errorColor, $errorColor, $errorColor)
+        )
+{
+    .n-#{$name}-text {
+        color: #{$color};
+        &:hover {
+            color: #{$hoverColor};
+        }
+        &:active {
+            color: #{$activeColor};
+        }
+        &:focus {
+            color: #{$supplyColor};
+        }
     }
 }
 
-.n-link-tertiary {
-    @extend .n-link;
-    color: $textColor3;
-    &:hover {
-        color: $primaryColorHover;
-    }
-    &:active {
-        color: $primaryColorPressed;
-    }
-}
-
-.n-link-primary,
-.n-link-success {
-    @extend .n-link;
-    color: $primaryColor;
-    &:hover {
-        color: $primaryColorHover;
-    }
-    &:active {
-        color: $primaryColorPressed;
-    }
-}
-.n-link-info {
-    @extend .n-link;
-    color: $infoColor;
-    &:hover {
-        color: $infoColorHover;
-    }
-    &:active {
-        color: $infoColorPressed;
-    }
-}
-.n-link-warning {
-    @extend .n-link;
-    color: $warningColor;
-    &:hover {
-        color: $warningColorHover;
-    }
-    &:active {
-        color: $warningColorPressed;
-    }
-}
-.n-link-error {
-    @extend .n-link;
-    color: $errorColor;
-    &:hover {
-        color: $errorColorHover;
-    }
-    &:active {
-        color: $errorColorPressed;
-    }
-}
-.n-default-text {
-    color: $textColor2;
-    &:hover {
-        color: $textColor2;
-    }
-    &:active {
-        color: $textColor2;
-    }
-}
-
-.n-tertiary-text {
-    color: $textColor3;
-    &:hover {
-        color: $textColor3;
-    }
-    &:active {
-        color: $textColor3;
-    }
-}
-
-.n-primary-text {
-    color: $primaryColor;
-    &:hover {
-        color: $primaryColor;
-    }
-    &:active {
-        color: $primaryColor;
-    }
-}
-.n-info-text {
-    color: $infoColor;
-    &:hover {
-        color: $infoColor;
-    }
-    &:active {
-        color: $infoColor;
-    }
-}
-.n-success-text {
-    color: $primaryColor;
-    &:hover {
-        color: $primaryColor;
-    }
-    &:active {
-        color: $primaryColor;
-    }
-}
-.n-warning-text {
-    color: $warningColor;
-    &:hover {
-        color: $warningColor;
-    }
-    &:active {
-        color: $warningColor;
-    }
-}
-.n-error-text {
-    color: $errorColor;
-    &:hover {
-        color: $errorColor;
-    }
-    &:active {
-        color: $errorColor;
-    }
-}
 .n-default {
     color: $textColor2 !important;
     border: 1px solid rgb(224, 224, 230);
@@ -265,6 +194,11 @@
     &:active {
         color: $primaryColorPressed !important;
         border: 1px solid $primaryColorPressed;
+    }
+
+    &:focus {
+        color: $primaryColorSuppl !important;
+        border: 1px solid $primaryColorSuppl;
     }
 }
 
@@ -281,81 +215,44 @@
         color: $primaryColorPressed !important;
         border: 1px solid $primaryColorPressed;
     }
-}
-.n-base-text {
-    color: $baseColor;
-    &:hover {
-        color: $baseColor;
-    }
-    &:active {
-        color: $baseColor;
+    &:focus {
+        color: $primaryColorSuppl !important;
+        border: 1px solid $primaryColorSuppl;
     }
 }
-.n-primary {
-    background-color: $primaryColor;
-
-    &:hover {
-        background-color: $primaryColorHover;
-    }
-
-    &:active {
-        background-color: $primaryColorPressed;
-    }
-}
-
-.n-info {
-    background-color: $infoColor;
-
-    &:hover {
-        background-color: $infoColorHover;
-    }
-
-    &:active {
-        background-color: $infoColorPressed;
+// common
+@each $name, $color, $hoverColor, $activeColor,
+    $supplyColor
+        in (
+            ("primary", $primaryColor, $primaryColorHover, $primaryColorPressed, $primaryColorSuppl),
+            ("info", $infoColor, $infoColorHover, $infoColorPressed, $infoColorSuppl),
+            ("success", $successColor, $successColorHover, $successColorPressed, $successColorSuppl),
+            ("warning", $warningColor, $warningColorHover, $warningColorPressed, $warningColorSuppl),
+            ("error", $errorColor, $errorColorHover, $errorColorPressed, $errorColorSuppl)
+        )
+{
+    .n-#{$name} {
+        background-color: #{$color};
+        &:hover {
+            background-color: #{$hoverColor};
+        }
+        &:active {
+            background-color: #{$activeColor};
+        }
+        &:focus {
+            background-color: #{$supplyColor};
+        }
     }
 }
 
-.n-success {
-    background-color: $successColor;
-
-    &:hover {
-        background-color: $successColorHover;
-    }
-
-    &:active {
-        background-color: $successColorPressed;
-    }
-}
-
-.n-warning {
-    background-color: $warningColor;
-
-    &:hover {
-        background-color: $warningColorHover;
-    }
-
-    &:active {
-        background-color: $warningColorPressed;
-    }
-}
-
-.n-error {
-    background-color: $errorColor;
-
-    &:hover {
-        background-color: $errorColorHover;
-    }
-
-    &:active {
-        background-color: $errorColorPressed;
-    }
-}
+// secondary
 .n-secondary {
     border: none;
     &:hover {
         border: none;
     }
-    &:active {
+    &:active,
+    &:focus {
         border: none;
     }
 }
@@ -365,7 +262,8 @@
     &:hover {
         background-color: rgba($color: $buttonColor2, $alpha: 0.09);
     }
-    &:active {
+    &:active,
+    &:focus {
         background-color: rgba($color: $buttonColor2, $alpha: 0.13);
     }
 }
@@ -375,62 +273,63 @@
     &:hover {
         background-color: rgba($color: $buttonColor2, $alpha: 0.09);
     }
-    &:active {
+    &:active,
+    &:focus {
         background-color: rgba($color: $buttonColor2, $alpha: 0.13);
     }
 }
-.n-secondary-primary {
-    @extend .n-primary-text;
-    background-color: rgba($color: $primaryColor, $alpha: 0.16);
-    &:hover {
-        background-color: rgba($color: $primaryColor, $alpha: 0.22);
-    }
-    &:active {
-        background-color: rgba($color: $primaryColor, $alpha: 0.28);
-    }
-}
-
-.n-secondary-info {
-    @extend .n-info-text;
-    background-color: rgba($color: $infoColor, $alpha: 0.16);
-    &:hover {
-        background-color: rgba($color: $infoColor, $alpha: 0.22);
-    }
-    &:active {
-        background-color: rgba($color: $infoColor, $alpha: 0.28);
-    }
-}
-
-.n-secondary-success {
-    @extend .n-success-text;
-    background-color: rgba($color: $successColor, $alpha: 0.16);
-    &:hover {
-        background-color: rgba($color: $successColor, $alpha: 0.22);
-    }
-    &:active {
-        background-color: rgba($color: $successColor, $alpha: 0.28);
-    }
-}
-
-.n-secondary-warning {
-    @extend .n-warning-text;
-    background-color: rgba($color: $warningColor, $alpha: 0.16);
-    &:hover {
-        background-color: rgba($color: $warningColor, $alpha: 0.22);
-    }
-    &:active {
-        background-color: rgba($color: $warningColor, $alpha: 0.28);
-    }
-}
-
-.n-secondary-error {
-    @extend .n-error-text;
-    background-color: rgba($color: $errorColor, $alpha: 0.16);
-    &:hover {
-        background-color: rgba($color: $errorColor, $alpha: 0.22);
-    }
-    &:active {
-        background-color: rgba($color: $errorColor, $alpha: 0.28);
+@each $name, $color, $hoverColor, $activeColor,
+    $supplyColor
+        in (
+            (
+                "primary",
+                rgba($primaryColor, 0.16),
+                rgba($primaryColorHover, 0.22),
+                rgba($primaryColorPressed, 0.28),
+                rgba($primaryColorSuppl, 0.22)
+            ),
+            (
+                "info",
+                rgba($infoColor, 0.16),
+                rgba($infoColorHover, 0.22),
+                rgba($infoColorPressed, 0.28),
+                rgba($infoColorSuppl, 0.22)
+            ),
+            (
+                "success",
+                rgba($successColor, 0.16),
+                rgba($successColorHover, 0.22),
+                rgba($successColorPressed, 0.28),
+                rgba($successColorSuppl, 0.22)
+            ),
+            (
+                "warning",
+                rgba($warningColor, 0.16),
+                rgba($warningColorHover, 0.22),
+                rgba($warningColorPressed, 0.28),
+                rgba($warningColorSuppl, 0.22)
+            ),
+            (
+                "error",
+                rgba($errorColor, 0.16),
+                rgba($errorColorHover, 0.22),
+                rgba($errorColorPressed, 0.28),
+                rgba($errorColorSuppl, 0.22)
+            )
+        )
+{
+    .n-secondary-#{$name} {
+        @extend .n-#{$name}-text;
+        background-color: #{$color};
+        &:hover {
+            background-color: #{$hoverColor};
+        }
+        &:active {
+            background-color: #{$activeColor};
+        }
+        &:focus {
+            background-color: #{$supplyColor};
+        }
     }
 }
 
@@ -442,7 +341,8 @@
         border: none;
     }
 
-    &:active {
+    &:active,
+    &:focus {
         background-color: $buttonColor2Pressed;
         border: none;
     }
@@ -457,18 +357,21 @@
         border: none;
     }
 
-    &:active {
+    &:active,
+    &:focus {
         background-color: $buttonColor2Pressed;
         border: none;
     }
 }
 
+// dashed
 .n-dashed {
     background-color: #0000;
     &:hover {
         background-color: #0000;
     }
-    &:active {
+    &:active,
+    &:focus {
         background-color: #0000;
     }
 }
@@ -478,25 +381,28 @@
     &:hover {
         border: 1px dashed $primaryColorHover;
     }
-    &:active {
+    &:active,
+    &:focus {
         border: 1px dashed $primaryColorHover;
     }
 }
-.n-dashed-primary {
-    border: 1px dashed $primaryColor;
-}
 
-.n-dashed-info {
-    border: 1px dashed $infoColor;
-}
-.n-dashed-success {
-    border: 1px dashed $successColor;
-}
-.n-dashed-warning {
-    border: 1px dashed $warningColor;
-}
-.n-dashed-error {
-    border: 1px dashed $errorColor;
+@each $name,
+    $color
+        in (
+            ("primary", $primaryColor),
+            ("info", $infoColor),
+            ("success", $successColor),
+            ("warning", $warningColor),
+            ("error", $errorColor)
+        )
+{
+    .n-dashed-#{$name} {
+        border: 1px dashed #{$color};
+    }
+    .n-ghost-#{$name} {
+        border: 1px solid #{$color};
+    }
 }
 
 .n-ghost {
@@ -504,7 +410,8 @@
     &:hover {
         background-color: #0000;
     }
-    &:active {
+    &:active,
+    &:focus {
         background-color: #0000;
     }
 }
@@ -514,23 +421,8 @@
     &:hover {
         border: 1px solid $primaryColorHover;
     }
-    &:active {
+    &:active,
+    &:focus {
         border: 1px solid $primaryColorHover;
     }
-}
-.n-ghost-primary {
-    border: 1px solid $primaryColor;
-}
-
-.n-ghost-info {
-    border: 1px solid $infoColor;
-}
-.n-ghost-success {
-    border: 1px solid $successColor;
-}
-.n-ghost-warning {
-    border: 1px solid $warningColor;
-}
-.n-ghost-error {
-    border: 1px solid $errorColor;
 }

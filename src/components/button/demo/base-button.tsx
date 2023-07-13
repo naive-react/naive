@@ -1,13 +1,15 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-12 10:38:22
+ * @LastEditTime: 2023-07-13 21:23:07
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
  */
-import {PropsWithChildren, ReactNode} from 'react';
+import {PropsWithChildren, ReactNode, useEffect, useState} from 'react';
+import {CashOutline} from '@ricons/ionicons5';
 import {Button, ButtonProps} from '..';
+import {Icon} from 'components/icon/src/icon';
 
 const SpaceButton = (props: PropsWithChildren<ButtonProps>) => {
     return <div style={{display: 'inline-block', marginRight: '10px', marginBottom: '10px'}}>
@@ -37,6 +39,12 @@ export const Card = ({label, description, children}: PropsWithChildren<{label: s
     </div>;
 };
 export default () => {
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        if (loading) {
+            setTimeout(() => setLoading(false), 3000);
+        }
+    }, [loading]);
     return <div style={{width: '80%', margin: '50px auto', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between'}}>
         <Card
             label='基础'
@@ -186,7 +194,7 @@ export default () => {
         <Card
             label='链接按钮'
             description={<span>
-          使用<Code>link</Code>与<Code>href</Code>来使用链接按钮。
+                使用<Code>link</Code>与<Code>href</Code>来使用链接按钮。
             </span>}
         >
             <SpaceButton link disabled>那车头依然吐着烟</SpaceButton>
@@ -194,6 +202,18 @@ export default () => {
             <SpaceButton link type='info'>那车头依然吐着烟</SpaceButton>
             <SpaceButton link type='warning'>那车头依然吐着烟</SpaceButton>
             <SpaceButton link type='error'>那车头依然吐着烟</SpaceButton>
+        </Card>
+        <Card
+            label='加载中'
+            description= '按钮有加载状态'
+        >
+            <SpaceButton loading={loading} icon={<Icon><CashOutline/></Icon>} onClick={() => setLoading(true)}>点我</SpaceButton>
+            <SpaceButton size='tiny' loading={loading} type='tertiary' onClick={() => setLoading(true)}>点我</SpaceButton>
+            <SpaceButton loading={loading} type='primary' secondary onClick={() => setLoading(true)}>点我</SpaceButton>
+            <SpaceButton loading={loading} type='info' disabled lesser onClick={() => setLoading(true)}>点我</SpaceButton>
+            <SpaceButton loading={loading} type='success' quaternary onClick={() => setLoading(true)}>点我</SpaceButton>
+            <SpaceButton loading={loading} type='warning' text onClick={() => setLoading(true)}>点我</SpaceButton>
+            <SpaceButton loading={loading} type='error' link onClick={() => setLoading(true)}>点我</SpaceButton>
         </Card>
     </div>;
 };
