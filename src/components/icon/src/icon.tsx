@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-12 09:17:33
- * @LastEditTime: 2023-07-13 21:48:15
+ * @LastEditTime: 2023-07-14 11:30:12
  * @LastEditors: shiruiqiang
  * @FilePath: icon.tsx
  * @Description: shiruiqiang
@@ -26,12 +26,12 @@ export const Icon = (props: PropsWithChildren<IconProps>) => {
 };
 
 export const IconWrapper = (props: PropsWithChildren<IconWrapperProps>) => {
-    const {size = 24, color, children} = props;
+    const {size = 24, color, borderRadius, children} = props;
     return <div style={{
         width: size,
         height: size,
         backgroundColor: color,
-        borderRadius: props['border-radius'],
+        borderRadius,
         ...props.styles
     }} className={classNames(props.className, 'n-icon-wrapper')}>
         {children}

@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-12 09:20:53
- * @LastEditTime: 2023-07-12 10:35:27
+ * @LastEditTime: 2023-07-14 11:29:50
  * @LastEditors: shiruiqiang
  * @FilePath: type.ts
  * @Description: shiruiqiang
@@ -22,5 +22,5 @@ export interface IconWrapperProps {
     color?: string;
     className?: string;
     styles?: CSSProperties;
-    'border-radius'?: number;
+    borderRadius?: number;
 }

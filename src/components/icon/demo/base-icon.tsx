@@ -1,3 +1,11 @@
+/*
+ * @Author: shiruiqiang
+ * @Date: 2023-07-14 10:29:58
+ * @LastEditTime: 2023-07-14 11:30:38
+ * @LastEditors: shiruiqiang
+ * @FilePath: base-icon.tsx
+ * @Description: shiruiqiang
+ */
 import {Card, Code} from 'components/button/demo/base-button';
 import {GameControllerOutline, GameController, CashOutline} from '@ricons/ionicons5';
 import {Checkmark16Filled} from '@ricons/fluent';
@@ -31,7 +39,7 @@ export default () => {
         <Card
             label='带背景色的图标'
             description='有的时候加个背景显得没那么单调。'>
-            <IconWrapper size={24} border-radius={10}>
+            <IconWrapper size={24} borderRadius={10}>
                 <Icon size={18} color='#ffffff' component={<Checkmark16Filled/>}></Icon>
             </IconWrapper>
         </Card>
