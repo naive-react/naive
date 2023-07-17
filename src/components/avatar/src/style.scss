@@ -1,0 +1,48 @@
+@import "styles/_common.scss";
+
+.n-avatar {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    border-radius: $borderRadius;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    transition:
+        border-color 0.3s $cubicBezierEaseInOut,
+        background-color 0.3s $cubicBezierEaseInOut,
+        color 0.3s $cubicBezierEaseInOut;
+    > img {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+.n-avatar-hide {
+    display: none;
+}
+.n-avatar-border {
+    border: 2px solid $cardColor;
+}
+
+.n-avatar-round {
+    border-radius: 50%;
+}
+
+.n-avatar-text {
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@each $name, $height in (("small", $heightSmall), ("medium", $heightMedium), ("large", $heightLarge)) {
+    .n-avatar-#{$name} {
+        width: #{$height};
+        height: #{$height};
+    }
+}
