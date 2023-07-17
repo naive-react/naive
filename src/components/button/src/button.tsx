@@ -1,25 +1,29 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-13 21:32:30
+ * @LastEditTime: 2023-07-17 10:29:02
  * @LastEditors: shiruiqiang
  * @FilePath: button.tsx
  * @Description: shiruiqiang
  */
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import {PropsWithChildren, MouseEvent, useRef} from 'react';
+import {PropsWithChildren, MouseEvent, useRef, createContext, useContext} from 'react';
 import classNames from 'classnames';
 
-import {ButtonProps} from './types';
+import {ButtonGroupProps, ButtonProps} from './types';
 
 import {Base} from '../../../styles';
 import {Wave, WaveRef} from '../../../internal/wave';
 import {warn} from 'utils/warn';
 import {Loading} from 'internal/loading';
+import {Size} from 'type/shape';
 import './style.scss';
 
+const ButtonGroupCtx = createContext<{size?: Size;}>({});
+
 export const Button = (props: PropsWithChildren<ButtonProps>) => {
+    const {size: groupSize} = useContext(ButtonGroupCtx);
     const {
         loading = false,
         text = false,
@@ -43,11 +47,12 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
         children
     } = props;
     const waveRef = useRef<WaveRef>(null);
+    const turthSize = groupSize ?? size;
     const classes = classNames(
         className,
         'n-button',
-        `n-${size}`,
-        `n-padding-${size}`,
+        `n-${turthSize}`,
+        `n-padding-${turthSize}`,
         `n-${type}`,
         `n-${type}-text`,
         {
@@ -112,4 +117,15 @@ export const Button = (props: PropsWithChildren<ButtonProps>) => {
             }
         </button>;
     }
+};
+
+export const ButtonGroup = (props: PropsWithChildren<ButtonGroupProps>) => {
+    const {size, vertical = false, children} = props;
+    return <ButtonGroupCtx.Provider value={{size}}>
+        <div className={classNames('n-button-group', {
+            'n-button-group-vertical': vertical
+        })}>
+            {children}
+        </div>
+    </ButtonGroupCtx.Provider>;
 };

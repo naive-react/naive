@@ -2,13 +2,14 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-07 04:10:30
- * @LastEditTime: 2023-07-11 20:17:40
+ * @LastEditTime: 2023-07-17 10:31:06
  * @LastEditors: shiruiqiang
  * @FilePath: button.spec.tsx
  * @Description: shiruiqiang
  */
 import {fireEvent, render} from '@testing-library/react';
-import {Button} from './button';
+import {Button, ButtonGroup} from './button';
+import {LogInOutline} from '@ricons/ionicons5';
 
 const ClickProps = {
     onClick: jest.fn()
@@ -142,5 +143,15 @@ describe('Button Component', () => {
         expect(wrapper.disabled).toBeTruthy();
         fireEvent.click(wrapper);
         expect(DisableProps.onClick).not.toHaveBeenCalled();
+    });
+    // 按钮组
+    it('button group', () => {
+        const btnGroup = render(<ButtonGroup size='tiny'>
+            <Button size='large' icon={<LogInOutline />}>活着</Button>
+            <Button ghost icon={<LogInOutline />}>不多</Button>
+            <Button icon={<LogInOutline />}>不少</Button>
+        </ButtonGroup>);
+        const wrapper = btnGroup.getByText('活着');
+        expect(wrapper.classList.contains('n-tiny')).toBeTruthy();
     });
 });

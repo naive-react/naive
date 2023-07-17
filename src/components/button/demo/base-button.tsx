@@ -1,14 +1,14 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-07-13 21:47:35
+ * @LastEditTime: 2023-07-17 10:29:17
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
  */
 import {PropsWithChildren, ReactNode, useEffect, useState} from 'react';
-import {CashOutline} from '@ricons/ionicons5';
-import {Button, ButtonProps} from '..';
+import {CashOutline, LogInOutline} from '@ricons/ionicons5';
+import {Button, ButtonGroup, ButtonProps} from '..';
 import {Icon} from 'components/icon/src/icon';
 
 const SpaceButton = (props: PropsWithChildren<ButtonProps>) => {
@@ -227,6 +227,21 @@ export default () => {
             </SpaceButton>
             <SpaceButton type='info' disabled lesser icon={<Icon><CashOutline/></Icon>}>加100元</SpaceButton>
             <SpaceButton type='success' quaternary icon={<Icon><CashOutline/></Icon>}>加100元</SpaceButton>
+        </Card>
+        <Card
+            label='按钮组'
+            description='可以把几个按钮结合成按钮组。'
+        >
+            <ButtonGroup size='tiny'>
+                <SpaceButton size='large' icon={<LogInOutline />}>活着</SpaceButton>
+                <SpaceButton ghost icon={<LogInOutline/>}>不多</SpaceButton>
+                <SpaceButton icon={<LogInOutline/>}>不少</SpaceButton>
+            </ButtonGroup>
+            <ButtonGroup vertical>
+                <SpaceButton icon={<LogInOutline />}>活着</SpaceButton>
+                <SpaceButton ghost icon={<LogInOutline/>}>不多</SpaceButton>
+                <SpaceButton icon={<LogInOutline/>}>不少</SpaceButton>
+            </ButtonGroup>
         </Card>
     </div>;
 };
