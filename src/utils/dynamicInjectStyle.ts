@@ -7,9 +7,9 @@
  * @Description: shiruiqiang
  */
 export const injecStyle = (styleSheet: string) => {
-  const style = document.createElement('style');
-  style.setAttribute('type', 'text/css');
-  document.head.appendChild(style);
-  const sheet = style.sheet;
-  sheet?.insertRule(styleSheet, 0);
+    const style = document.createElement('style');
+    style.setAttribute('type', 'text/css');
+    document.head.appendChild(style);
+    const sheet = style.sheet;
+    sheet?.insertRule(styleSheet, 0);
 };

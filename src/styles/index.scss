@@ -1,5 +1,5 @@
 @use "sass:map";
-@import "./common";
+@import "./_common.scss";
 
 body {
     font-family: $fontFamily;
