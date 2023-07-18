@@ -4,11 +4,12 @@ import {ObjectFit, Size} from 'type/shape';
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-17 10:51:55
- * @LastEditTime: 2023-07-17 19:08:53
+ * @LastEditTime: 2023-07-18 09:31:49
  * @LastEditors: shiruiqiang
  * @FilePath: type.ts
  * @Description: shiruiqiang
  */
+export type AvatarSize = Omit<Size, 'tiny'> | number;
 export interface AvatarProps {
     // 边框
     bordered?: boolean;
@@ -29,9 +30,16 @@ export interface AvatarProps {
     // 头像是否圆形
     round?: boolean;
     // 头像的尺寸
-    size?: Omit<Size, 'tiny'> | number;
+    size?: AvatarSize;
     // 头像地址
     src?: string;
     // 头像的图片加载失败执行的回调
     onError?: (e: SyntheticEvent) => void;
+}
+
+export interface AvatarGroupProps {
+    // 在组内的按钮的尺寸。如果设定，内部的头像尺寸将不生效
+    size?: AvatarSize;
+    // 组内头像的排列方式
+    vertical?: boolean;
 }

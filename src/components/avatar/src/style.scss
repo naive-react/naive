@@ -46,3 +46,11 @@
         height: #{$height};
     }
 }
+
+.n-avatar-group {
+    display: flex;
+    flex-direction: row;
+}
+.n-avatar-group-vertical {
+    flex-direction: column;
+}

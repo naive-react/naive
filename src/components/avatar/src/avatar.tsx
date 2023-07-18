@@ -1,18 +1,22 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import {PropsWithChildren, SyntheticEvent, useCallback, useMemo, useRef, useState} from 'react';
-import {AvatarProps} from './type';
+import {PropsWithChildren, SyntheticEvent, createContext, useCallback, useContext, useMemo, useRef, useState} from 'react';
 import classNames from 'classnames';
-import './style.scss';
+import {AvatarGroupProps, AvatarProps, AvatarSize} from './type';
 import {useWatchElementSize} from 'hooks/useWatchElementSize';
+
+import './style.scss';
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-17 10:50:51
- * @LastEditTime: 2023-07-17 20:43:08
+ * @LastEditTime: 2023-07-18 11:03:41
  * @LastEditors: shiruiqiang
  * @FilePath: avatar.tsx
  * @Description: shiruiqiang
  */
+
+const AvatarGroupCtx = createContext<{size?: AvatarSize;}>({});
 export const Avatar = (props: PropsWithChildren<AvatarProps>) => {
+    const {size: groupSize} = useContext(AvatarGroupCtx);
     const {
         src,
         backgroundColor = 'rgba(204, 204, 204, 1)',
@@ -33,6 +37,9 @@ export const Avatar = (props: PropsWithChildren<AvatarProps>) => {
     const [isLoading, setIsLoading] = useState(!children);
     const selfRef = useRef<HTMLElement>(null);
     const textRef = useRef<HTMLElement>(null);
+    const turthSize = useMemo(() => {
+        return groupSize ?? size;
+    }, [groupSize, size]);
     const fitTextTransform = () => {
         if (textRef.current) {
             if (memoedTextHtml === null || memoedTextHtml !== textRef.current.innerHTML) {
@@ -59,22 +66,22 @@ export const Avatar = (props: PropsWithChildren<AvatarProps>) => {
     const classes = classNames('n-avatar', {
         'n-avatat-border': bordered,
         'n-avatar-round': round,
-        [`n-avatar-${size}`]: typeof size === 'string'
+        [`n-avatar-${turthSize}`]: typeof turthSize === 'string'
     });
     const widthAndHeight = useMemo(() => {
-        if (typeof size === 'number') {
+        if (typeof turthSize === 'number') {
             return {
-                width: `${size}px`,
-                height: `${size}px`
+                width: `${turthSize}px`,
+                height: `${turthSize}px`
             };
         }
         return null;
-    }, [size]);
+    }, [turthSize]);
     const handleError = useCallback((e: SyntheticEvent) => {
-        typeof onError === 'function' && onError(e);
-        typeof props.imgProps?.onError === 'function' && props.imgProps?.onError(e);
         setIsError(true);
         setIsLoading(false);
+        typeof onError === 'function' && onError(e);
+        typeof props.imgProps?.onError === 'function' && props.imgProps?.onError(e);
     }, [onError]);
     const handleLoad = (e: SyntheticEvent) => {
         typeof props.imgProps?.onLoad === 'function' && props.imgProps?.onLoad(e);
@@ -112,4 +119,15 @@ export const Avatar = (props: PropsWithChildren<AvatarProps>) => {
             }
         </span>
     );
+};
+
+export const AvatarGroup = (props: PropsWithChildren<AvatarGroupProps>) => {
+    const {size, vertical = false, children} = props;
+    return <AvatarGroupCtx.Provider value={{size}}>
+        <div className={classNames('n-avatar-group', {
+            'n-avatar-group-vertical': vertical
+        })}>
+            {children}
+        </div>
+    </AvatarGroupCtx.Provider>;
 };

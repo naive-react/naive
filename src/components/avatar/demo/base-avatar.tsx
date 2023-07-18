@@ -1,6 +1,6 @@
 import {MdCash} from '@ricons/ionicons4';
 import {Card, Code} from 'components/button/demo/base-button';
-import {Avatar} from '../src/avatar';
+import {Avatar, AvatarGroup} from '../src/avatar';
 import {AvatarProps} from '../src/type';
 import {Icon} from 'components/icon';
 import {PropsWithChildren, useState} from 'react';
@@ -8,13 +8,13 @@ import {PropsWithChildren, useState} from 'react';
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-17 17:24:00
- * @LastEditTime: 2023-07-17 20:35:58
+ * @LastEditTime: 2023-07-18 10:31:22
  * @LastEditors: shiruiqiang
  * @FilePath: base-avatar.tsx
  * @Description: shiruiqiang
  */
 const SpaceAvatar = (props: PropsWithChildren<AvatarProps>) => {
-    return <div style={{margin: '0 6px', display: 'inline-block'}}>
+    return <div style={{margin: '6px', display: 'inline-block'}}>
         <Avatar {...props} />
     </div>;
 };
@@ -80,6 +80,21 @@ export default () => {
             <SpaceAvatar size='large'>{text}</SpaceAvatar>
             <SpaceAvatar round>{text}</SpaceAvatar>
             <input value={text} onChange={e => setText(e.target.value)} />
+        </Card>
+        <Card
+            label='头像组'
+            description='人多不一定是好事。'
+        >
+            <AvatarGroup size='large'>
+                <SpaceAvatar round src='https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg' />
+                <SpaceAvatar round size='small' src='https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg'/>
+                <SpaceAvatar round src='https://gw.alipayobjects.com/zos/antfincdn/aPkFc8Sj7n/method-draw-image.svg'/>
+            </AvatarGroup>
+            <AvatarGroup size='small' vertical>
+                <SpaceAvatar src='https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg' round />
+                <SpaceAvatar src='https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg' round/>
+                <SpaceAvatar src='https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg' round/>
+            </AvatarGroup>
         </Card>
     </div>;
 };
