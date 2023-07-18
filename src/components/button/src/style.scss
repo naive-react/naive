@@ -426,3 +426,11 @@
         border: 1px solid $primaryColorHover;
     }
 }
+
+.n-button-group {
+    display: flex;
+    flex-direction: row;
+}
+.n-button-group-vertical {
+    flex-direction: column;
+}
