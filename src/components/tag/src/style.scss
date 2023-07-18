@@ -40,25 +40,78 @@ $padding: 0 7px; // 自身的
     font-size: $fontSize;
     &.n-tag-round {
       border-radius: calc($height / 2);
+      .n-avatar {
+        border-radius: calc(($fontSize * 1.3) / 2);
+      }
+    }
+    .n-tag__avatar {
+      display: flex;
+      margin: 0 6px 0 0;
+      .n-avatar {
+        width: $fontSize * 1.3;
+        height: $fontSize * 1.3;
+      }
+    }
+    .n-tag__icon {
+      font-size: calc($height - 8px);
     }
   }
 }
 
 // 主题色
 $defaultBgColor: rgb(250, 250, 252); // 自身的
-@each $type, $textColor, $borderColor,
-  $bgColor in (default $textColor2 $borderColor $defaultBgColor),
-  (success $primaryColor rgba($primaryColor, 0.3) rgba($primaryColor, 0.1)),
-  (primary $primaryColor rgba($primaryColor, 0.3) rgba($primaryColor, 0.1)),
-  (warning $warningColor rgba($warningColor, 0.35) rgba($warningColor, 0.12)),
-  (error $errorColor rgba($errorColor, 0.23) rgba($errorColor, 0.08)),
-  (info $infoColor rgba($infoColor, 0.3) rgba($infoColor, 0.1))
+@each $type, $textColor, $borderColor, $bgColor,
+  $notBorderBgColor in (default $textColor2 $borderColor $defaultBgColor #eee),
+  (
+    success
+      $primaryColor
+      rgba($primaryColor, 0.3)
+      rgba($primaryColor, 0.1)
+      rgba($primaryColor, 0.12)
+  ),
+  (
+    primary
+      $primaryColor
+      rgba($primaryColor, 0.3)
+      rgba($primaryColor, 0.1)
+      rgba($primaryColor, 0.12)
+  ),
+  (
+    warning
+      $warningColor
+      rgba($warningColor, 0.35)
+      rgba($warningColor, 0.12)
+      rgba($warningColor, 0.15)
+  ),
+  (
+    error
+      $errorColor
+      rgba($errorColor, 0.23)
+      rgba($errorColor, 0.08)
+      rgba($errorColor, 0.1)
+  ),
+  (
+    info
+      $infoColor
+      rgba($infoColor, 0.3)
+      rgba($infoColor, 0.1)
+      rgba($infoColor, 0.12)
+  )
 {
   .n-tag-theme-#{$type} {
     color: $textColor;
-    background-color: $bgColor;
+    &.n-tag-border {
+      background-color: $bgColor;
+    }
+    background-color: $notBorderBgColor;
     .n-tag-border-#{$type} {
       border: 1px solid $borderColor;
+    }
+    .n-tag__icon {
+      display: flex;
+      margin: 0 4px 0 0;
+      color: $textColor;
+      transition: color 0.3s $cubicBezierEaseInOut;
     }
   }
 }
