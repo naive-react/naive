@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 14:39:41
- * @LastEditTime: 2023-07-13 16:50:35
+ * @LastEditTime: 2023-07-14 14:12:02
  * @LastEditors: shiruiqiang
  * @FilePath: types.ts
  * @Description: shiruiqiang
@@ -50,3 +50,10 @@ export interface ButtonProps {
     // 点击事件
     onClick?: (event: MouseEvent) => void;
 };
+
+export interface ButtonGroupProps {
+    // 在组内的按钮的尺寸。如果设定，内部的按钮尺寸将不生效
+    size?: Size;
+    // 组内按钮的排列方式
+    vertical?: boolean;
+}

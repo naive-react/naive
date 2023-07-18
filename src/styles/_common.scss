@@ -3,104 +3,108 @@
 
 $baseColor: map-get(
     $map: $base,
-    $key: neutralbase,
+    $key: neutralbase
+);
+$cardColor: map-get(
+    $map: $base,
+    $key: neutralcard
 );
 // primaary
 
 $primaryColor: map-get(
     $map: $base,
-    $key: primarydefault,
+    $key: primarydefault
 );
 $primaryColorHover: map-get(
     $map: $base,
-    $key: primaryhover,
+    $key: primaryhover
 );
 $primaryColorPressed: map-get(
     $map: $base,
-    $key: primaryactive,
+    $key: primaryactive
 );
 $primaryColorSuppl: map-get(
     $map: $base,
-    $key: primarysuppl,
+    $key: primarysuppl
 );
 // info color
 $infoColor: map-get(
     $map: $base,
-    $key: infodefault,
+    $key: infodefault
 );
 $infoColorHover: map-get(
     $map: $base,
-    $key: infohover,
+    $key: infohover
 );
 
 $infoColorPressed: map-get(
     $map: $base,
-    $key: infoactive,
+    $key: infoactive
 );
 $infoColorSuppl: map-get(
     $map: $base,
-    $key: infosuppl,
+    $key: infosuppl
 );
 // success color
 $successColor: map-get(
     $map: $base,
-    $key: successdefault,
+    $key: successdefault
 );
 $successColorHover: map-get(
     $map: $base,
-    $key: successhover,
+    $key: successhover
 );
 $successColorPressed: map-get(
     $map: $base,
-    $key: successactive,
+    $key: successactive
 );
 $successColorSuppl: map-get(
     $map: $base,
-    $key: successsuppl,
+    $key: successsuppl
 );
 // warning color
 $warningColor: map-get(
     $map: $base,
-    $key: warningdefault,
+    $key: warningdefault
 );
 $warningColorHover: map-get(
     $map: $base,
-    $key: warninghover,
+    $key: warninghover
 );
 $warningColorPressed: map-get(
     $map: $base,
-    $key: warningactive,
+    $key: warningactive
 );
 $warningColorSuppl: map-get(
     $map: $base,
-    $key: warningsuppl,
+    $key: warningsuppl
 );
 // error color
 $errorColor: map-get(
     $map: $base,
-    $key: errordefault,
+    $key: errordefault
 );
 $errorColorHover: map-get(
     $map: $base,
-    $key: errorhover,
+    $key: errorhover
 );
 $errorColorPressed: map-get(
     $map: $base,
-    $key: erroractive,
+    $key: erroractive
 );
 $errorColorSuppl: map-get(
     $map: $base,
-    $key: errorsuppl,
+    $key: errorsuppl
 );
 
 $baseColor: map-get(
     $map: $base,
-    $key: neutralbase,
+    $key: neutralbase
 );
 // text color
 $textColorBase: map-get(
     $map: $base,
-    $key: neutraltextbase,
+    $key: neutraltextbase
 );
 $textColor1: rgb(31, 34, 37);
 $textColor2: rgb(51, 54, 57);
@@ -108,29 +112,29 @@ $textColor3: rgb(118, 124, 130);
 // opcity
 $opacity1: map-get(
     $map: $base,
-    $key: alpha1,
+    $key: alpha1
 );
 $opacity2: map-get(
     $map: $base,
-    $key: alpha2,
+    $key: alpha2
 );
 $opacity3: map-get(
     $map: $base,
-    $key: alpha3,
+    $key: alpha3
 );
 $opacity4: map-get(
     $map: $base,
-    $key: alpha4,
+    $key: alpha4
 );
 $opacity5: map-get(
     $map: $base,
-    $key: alpha5,
+    $key: alpha5
 );
 
 // disabled
 $opacityDisabled: map-get(
     $map: $base,
-    $key: alphadisabled,
+    $key: alphadisabled
 );
 
 $dividerColor: rgb(239, 239, 245);
@@ -143,13 +147,30 @@ $buttonColor2Hover: rgba(46, 51, 56, 0.09);
 $buttonColor2Pressed: rgba(46, 51, 56, 0.13);
 
 // box-shadow
-$boxShadow1: 0 1px 2px -2px rgba(0, 0, 0, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.06), 0 5px 12px 4px rgba(0, 0, 0, 0.04);
-$boxShadow2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
-$boxShadow3: 0 6px 16px -9px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03);
+$boxShadow1:
+    0 1px 2px -2px rgba(0, 0, 0, 0.08),
+    0 3px 6px 0 rgba(0, 0, 0, 0.06),
+    0 5px 12px 4px rgba(0, 0, 0, 0.04);
+$boxShadow2:
+    0 3px 6px -4px rgba(0, 0, 0, 0.12),
+    0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+$boxShadow3:
+    0 6px 16px -9px rgba(0, 0, 0, 0.08),
+    0 9px 28px 0 rgba(0, 0, 0, 0.05),
+    0 12px 48px 16px rgba(0, 0, 0, 0.03);
 
 // font
-$fontFamily: v-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol";
+$fontFamily:
+    v-sans,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol";
 $fontFamilyMono: v-mono, SFMono-Regular, Menlo, Consolas, Courier, monospace;
 
 $fontWeight: 400;
