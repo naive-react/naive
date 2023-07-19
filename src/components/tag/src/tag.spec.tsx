@@ -1,12 +1,12 @@
-import { fireEvent, render } from '@testing-library/react';
-import { Avatar } from 'components/avatar';
-import { Icon } from 'components/icon';
-import { Tag } from './tag';
+import {fireEvent, render} from '@testing-library/react';
+import {Avatar} from 'components/avatar';
+import {Icon} from 'components/icon';
+import {Tag} from './tag';
 
 class ResizeObserver {
-  observe () {}
-  unobserve () { }
-  disconnect () {}
+    observe () {}
+    unobserve () { }
+    disconnect () {}
 }
 describe('Tag Component', () => {
     window.ResizeObserver = ResizeObserver;
@@ -83,5 +83,24 @@ describe('Tag Component', () => {
     it('should work with `icon` props', () => {
         const {container} = render(<Tag icon={<Icon></Icon>}>children</Tag>);
         expect(container.querySelector('.n-tag__icon')).toBeTruthy();
+    });
+    it('should work with `closeable` props', () => {
+        const {container} = render(<Tag closable={true}>children</Tag>);
+        expect(container.querySelector('.n-tag--closeable')).toBeTruthy();
+    });
+    it('should work with `onClose` props', () => {
+        const onClose = jest.fn();
+        const {container} = render(<Tag closable={true} onClose={onClose}>children</Tag>);
+        const closeElm = container.querySelector('.n-tag__close');
+        closeElm && fireEvent.click(closeElm);
+        expect(onClose).toHaveBeenCalled();
+    });
+    it('should work with `color props', () => {
+        const color = {color: 'red', textColor: 'white', borderColor: 'blue'};
+        const {container} = render(<Tag color={color}>children</Tag>);
+        const tag = container.querySelector('.n-tag');
+        expect(tag).toHaveStyle('background-color: red');
+        expect(tag).toHaveStyle('color: white');
+        expect(container.querySelector('.n-tag__border')).toHaveStyle('border-color: blue');
     });
 });
