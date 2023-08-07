@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 16:12:49
- * @LastEditTime: 2023-08-07 14:33:26
+ * @LastEditTime: 2023-07-17 10:29:17
  * @LastEditors: shiruiqiang
  * @FilePath: base-button.tsx
  * @Description: shiruiqiang
@@ -233,14 +233,14 @@ export default () => {
             description='可以把几个按钮结合成按钮组。'
         >
             <ButtonGroup size='tiny'>
-                <SpaceButton size='large' icon={<Icon><LogInOutline /></Icon>}>活着</SpaceButton>
-                <SpaceButton ghost icon={<Icon><LogInOutline/></Icon>}>不多</SpaceButton>
-                <SpaceButton icon={<Icon><LogInOutline/></Icon>}>不少</SpaceButton>
+                <SpaceButton size='large' icon={<LogInOutline />}>活着</SpaceButton>
+                <SpaceButton ghost icon={<LogInOutline/>}>不多</SpaceButton>
+                <SpaceButton icon={<LogInOutline/>}>不少</SpaceButton>
             </ButtonGroup>
             <ButtonGroup vertical>
-                <SpaceButton icon={<Icon><LogInOutline /></Icon>}>活着</SpaceButton>
-                <SpaceButton ghost icon={<Icon><LogInOutline/></Icon>}>不多</SpaceButton>
-                <SpaceButton icon={<Icon><LogInOutline/></Icon>}>不少</SpaceButton>
+                <SpaceButton icon={<LogInOutline />}>活着</SpaceButton>
+                <SpaceButton ghost icon={<LogInOutline/>}>不多</SpaceButton>
+                <SpaceButton icon={<LogInOutline/>}>不少</SpaceButton>
             </ButtonGroup>
         </Card>
     </div>;
