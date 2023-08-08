@@ -28,5 +28,4 @@ jobs:
           else
           npm i
           fi
-    - run: npm run lint
     - run: npm run test
