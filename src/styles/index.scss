@@ -1,6 +1,6 @@
 @use "sass:map";
+@import "normalize.css";
 @import "./_common.scss";
-
 body {
     font-family: $fontFamily;
     margin: 0;

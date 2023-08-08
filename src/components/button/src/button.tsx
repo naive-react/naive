@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-05 04:40:16
- * @LastEditTime: 2023-07-17 10:29:02
+ * @LastEditTime: 2023-08-08 22:51:06
  * @LastEditors: shiruiqiang
  * @FilePath: button.tsx
  * @Description: shiruiqiang
@@ -11,16 +11,15 @@
 import {PropsWithChildren, MouseEvent, useRef, createContext, useContext} from 'react';
 import classNames from 'classnames';
 
-import {ButtonGroupProps, ButtonProps} from './types';
+import {ButtonGroupProps, ButtonProps, ButtonSize} from './types';
 
 import {Base} from '../../../styles';
 import {Wave, WaveRef} from '../../../internal/wave';
 import {warn} from 'utils/warn';
 import {Loading} from 'internal/loading';
-import {Size} from 'type/shape';
 import './style.scss';
 
-const ButtonGroupCtx = createContext<{size?: Size;}>({});
+const ButtonGroupCtx = createContext<{size?: ButtonSize;}>({});
 
 export const Button = (props: PropsWithChildren<ButtonProps>) => {
     const {size: groupSize} = useContext(ButtonGroupCtx);
