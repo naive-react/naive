@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import {NBaseIcon} from 'internal/icon';
 import {CloseIcon} from 'internal/icons';
-import {PropsWithChildren} from 'react';
 import './index.scss';
 
 interface NBaseCloseProps {
@@ -14,7 +13,7 @@ interface NBaseCloseProps {
     className?: string;
 }
 
-export const NBaseClose = (props: PropsWithChildren<NBaseCloseProps>) => {
+export const NBaseClose = (props: NBaseCloseProps) => {
     const {
         isButtonTag = true,
         disabled = undefined,
