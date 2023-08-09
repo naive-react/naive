@@ -6,6 +6,7 @@
  * @FilePath: index.ts
  * @Description: shiruiqiang
  */
+export {Avatar} from './avatar';
 export {Button, ButtonGroup} from './button';
 export {Icon, IconWrapper} from './icon';
-export {Avatar} from './avatar';
+export {Tag} from './tag';

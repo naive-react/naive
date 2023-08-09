@@ -6,14 +6,14 @@
  * @FilePath: App.tsx
  * @Description: shiruiqiang
  */
-import React from 'react';
 import 'normalize.css';
+import React from 'react';
 import './styles/index.scss';
 
-const RootComponent = React.lazy(() => import('./components/button/demo/base-button'));
+// const RootComponent = React.lazy(() => import('./components/button/demo/base-button'));
 // const RootComponent = React.lazy(() => import('./components/icon/demo/base-icon'));
 // const RootComponent = React.lazy(() => import('./components/avatar/demo/base-avatar'));
-
+const RootComponent = React.lazy(() => import('./components/tag/demo/base-tag'));
 function App () {
     return (
         <RootComponent></RootComponent>

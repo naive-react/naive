@@ -1,0 +1,29 @@
+.n-base-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  position: relative;
+  padding: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: inherit;
+    border-radius: inherit;
+  }
+  &--round {
+    &::before {
+      border-radius: 50%;
+    }
+  }
+  &--disabled {
+    cursor: not-allowed;
+    background-color: transparent;
+  }
+}
