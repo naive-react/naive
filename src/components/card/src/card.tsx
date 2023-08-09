@@ -1,15 +1,17 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-08-08 15:02:42
- * @LastEditTime: 2023-08-08 22:47:45
+ * @LastEditTime: 2023-08-09 10:40:52
  * @LastEditors: shiruiqiang
  * @FilePath: card.tsx
  * @Description: shiruiqiang
  */
 import {PropsWithChildren} from 'react';
-import {CardProps} from './type';
 import classNames from 'classnames';
 import {CustomTag} from 'internal/customTag';
+import {NBaseClose} from 'internal/close';
+import {CardProps} from './type';
+
 import './style.scss';
 
 export const Card = (props: PropsWithChildren<CardProps>) => {
@@ -36,6 +38,10 @@ export const Card = (props: PropsWithChildren<CardProps>) => {
         'n-card-hover': hoverable,
         'n-card-embedded': embedded
     }, className);
+    const handleClose = (e: MouseEvent) => {
+        e && e.stopPropagation();
+        typeof onClose === 'function' && onClose();
+    };
     return <CustomTag
         tag={tag}
         attrs={{
@@ -50,10 +56,17 @@ export const Card = (props: PropsWithChildren<CardProps>) => {
         }
         <div className={`n-card-header-${size as string}`}>
             {
-                header ?? <><span className='n-card-header-title'>
-                    {title}
-                </span>
-                {headerExtra}
+                header ?? <>
+                    <span className='n-card-header-title'>
+                        {title}
+                    </span>
+                    {headerExtra}
+                    {
+                        closable && <NBaseClose
+                            className='n-card-header-close'
+                            onClick={handleClose}
+                        />
+                    }
                 </>
             }
         </div>

@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-08-08 15:05:13
- * @LastEditTime: 2023-08-08 22:44:33
+ * @LastEditTime: 2023-08-09 10:41:10
  * @LastEditors: shiruiqiang
  * @FilePath: base-card.tsx
  * @Description: shiruiqiang
@@ -30,6 +30,10 @@ export default () => {
                 >
                     卡片内容
                 </Card>
+            </Card>
+            <Card title='可关闭'>
+                <p>用于 Modal 的时候，你可能需要这个属性。</p>
+                <Card closable title='卡片' onClose={() => alert('card close')}>卡片内容</Card>
             </Card>
         </div>
         <div style={{width: '35vw'}}>
