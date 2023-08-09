@@ -1,0 +1,198 @@
+@import '../../../styles/common';
+
+$closeIconSizeTiny: 12px;
+$closeIconSizeSmall: 12px;
+$closeIconSizeMedium: 14px;
+$closeIconSizeLarge: 14px;
+$closeSizeTiny: 16px;
+$closeSizeSmall: 16px;
+$closeSizeMedium: 18px;
+$closeSizeLarge: 18px;
+$padding: 0 7px;
+$closeMargin: 0 0 0 4px;
+// $closeMarginRtl: 0 4px 0 0;
+.n-tag {
+  white-space: nowrap;
+  position: relative;
+  box-sizing: border-box;
+  cursor: default;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: $padding;
+  border-radius: $borderRadiusSmall;
+  transition: border-color 0.3s $cubicBezierEaseInOut,
+    background-color 0.3s $cubicBezierEaseInOut,
+    color 0.3s $cubicBezierEaseInOut, box-shadow 0.3s $cubicBezierEaseInOut,
+    opacity 0.3s $cubicBezierEaseInOut;
+  line-height: 1;
+
+  &__border {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: inherit;
+    border: $borderRadiusSmall;
+    transition: border-color 0.3s $cubicBezierEaseInOut;
+  }
+}
+
+@each $size, $height, $fontSize, $closeIconSize,
+  $closeSize
+    in (small $heightTiny $fontSizeTiny $closeIconSizeTiny $closeSizeTiny),
+  (medium $heightSmall $fontSizeSmall $closeIconSizeMedium $closeSizeMedium),
+  (large $heightMedium $fontSizeMedium $closeIconSizeLarge $closeSizeLarge)
+{
+  .n-tag-#{$size} {
+    height: $height;
+    font-size: $fontSize;
+    &.n-tag-round {
+      border-radius: calc($height / 2);
+      .n-avatar {
+        border-radius: 50%;
+      }
+      .n-base-close {
+        border-radius: 50%;
+      }
+    }
+    .n-tag__avatar {
+      display: flex;
+      margin: 0 6px 0 0;
+      .n-avatar {
+        width: $fontSize * 1.3;
+        height: $fontSize * 1.3;
+      }
+    }
+    .n-tag__icon {
+      font-size: calc($height - 8px);
+    }
+    .n-base-close {
+      height: $closeSize;
+      width: $closeSize;
+      font-size: $closeIconSize;
+      &::before {
+        height: $closeSize;
+        width: $closeSize;
+      }
+      &--absolute {
+        height: $closeIconSize;
+        width: $closeIconSize;
+      }
+    }
+  }
+}
+
+// 主题色
+$defaultBgColor: rgb(250, 250, 252); // 自身的
+@each $type, $textColor, $borderColor, $bgColor,
+  $notBorderBgColor in (default $textColor2 $borderColor $defaultBgColor #eee),
+  (
+    success
+      $primaryColor
+      rgba($primaryColor, 0.3)
+      rgba($primaryColor, 0.1)
+      rgba($primaryColor, 0.12)
+  ),
+  (
+    primary
+      $primaryColor
+      rgba($primaryColor, 0.3)
+      rgba($primaryColor, 0.1)
+      rgba($primaryColor, 0.12)
+  ),
+  (
+    warning
+      $warningColor
+      rgba($warningColor, 0.35)
+      rgba($warningColor, 0.12)
+      rgba($warningColor, 0.15)
+  ),
+  (
+    error
+      $errorColor
+      rgba($errorColor, 0.23)
+      rgba($errorColor, 0.08)
+      rgba($errorColor, 0.1)
+  ),
+  (
+    info
+      $infoColor
+      rgba($infoColor, 0.3)
+      rgba($infoColor, 0.1)
+      rgba($infoColor, 0.12)
+  )
+{
+  .n-tag-theme-#{$type} {
+    color: $textColor;
+    &.n-tag-border {
+      background-color: $bgColor;
+    }
+    background-color: $notBorderBgColor;
+    .n-tag-border-#{$type} {
+      border: 1px solid $borderColor;
+    }
+    .n-tag__icon {
+      display: flex;
+      margin: 0 4px 0 0;
+      color: $textColor;
+      transition: color 0.3s $cubicBezierEaseInOut;
+    }
+    .n-base-close {
+      color: $textColor;
+      border-radius: $borderRadiusSmall;
+      &--disabled {
+        color: $textColor;
+      }
+      &:not(&--disabled) {
+        &:hover {
+          color: $textColor;
+          &::before {
+            background-color: rgba($textColor, 0.12);
+          }
+        }
+        &:focus::before {
+          background-color: rgba($textColor, 0.12);
+        }
+        &:active {
+          color: $textColor;
+          &::before {
+            background-color: rgba($textColor, 0.12);
+          }
+        }
+      }
+    }
+  }
+}
+
+.n-tag-disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
+.n-tag-strong {
+  font-weight: $fontWeightStrong;
+}
+.n-tag-checkable {
+  cursor: pointer;
+  background-color: #0000; // 自身的
+  color: $textColor2;
+  box-shadow: none;
+  &.n-tag-checked {
+    background-color: $primaryColor;
+    color: $baseColor;
+    &:hover:not(.n-tag-disabled) {
+      background-color: $primaryColorSuppl;
+    }
+  }
+  &:hover:not(.n-tag-disabled) {
+    background-color: $buttonColor2Hover;
+  }
+}
+
+.n-tag__close {
+  margin: $closeMargin; // 自身的
+  transition: background-color 0.3s $cubicBezierEaseInOut,
+    color 0.3s $cubicBezierEaseInOut;
+}

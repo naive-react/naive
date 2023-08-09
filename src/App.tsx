@@ -1,13 +1,13 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-03 11:19:58
- * @LastEditTime: 2023-08-08 17:13:21
+ * @LastEditTime: 2023-08-09 10:07:27
  * @LastEditors: shiruiqiang
  * @FilePath: App.tsx
  * @Description: shiruiqiang
  */
-import React from 'react';
 import 'normalize.css';
+import React from 'react';
 import './styles/index.scss';
 
 // const RootComponent = React.lazy(() => import('./components/button/demo/base-button'));

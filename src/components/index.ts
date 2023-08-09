@@ -9,3 +9,4 @@
 export {Button, ButtonGroup} from './button';
 export {Icon, IconWrapper} from './icon';
 export {Avatar, AvatarGroup} from './avatar';
+export {Tag} from './tag';
