@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-04 14:39:41
- * @LastEditTime: 2023-07-14 14:12:02
+ * @LastEditTime: 2023-08-08 17:19:06
  * @LastEditors: shiruiqiang
  * @FilePath: types.ts
  * @Description: shiruiqiang
@@ -9,8 +9,8 @@
 import {HTMLAttributeAnchorTarget, MouseEvent, ReactNode} from 'react';
 import {type Size} from '../../../type/shape';
 
-type Type = 'default' | 'tertiary' | 'primary' | 'info' | 'success' | 'warning' | 'error'
-
+export type ButtonType = 'default' | 'tertiary' | 'primary' | 'info' | 'success' | 'warning' | 'error'
+export type ButtonSize = Omit<Size, 'huge'>;
 export interface ButtonProps {
     icon?: ReactNode;
     // 加载中
@@ -28,9 +28,9 @@ export interface ButtonProps {
     // 边框
     bordered?: boolean;
     // 尺寸
-    size?: Size;
+    size?: ButtonSize;
     // 类型
-    type?: Type;
+    type?: ButtonType;
     // 次要按钮
     secondary?: boolean;
     // 加粗
@@ -53,7 +53,7 @@ export interface ButtonProps {
 
 export interface ButtonGroupProps {
     // 在组内的按钮的尺寸。如果设定，内部的按钮尺寸将不生效
-    size?: Size;
+    size?: ButtonSize;
     // 组内按钮的排列方式
     vertical?: boolean;
 }

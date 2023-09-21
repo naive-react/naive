@@ -1,0 +1,115 @@
+@use "sass:map";
+@import "../../../styles/common";
+$closeBoxSize: 22px;
+$closeIconSize: 18px;
+$closeColor: rgb(102, 102, 102);
+
+$headerPadding: (
+    small: "12px 16px",
+    medium: "19px 24px 20px 24px",
+    large: "23px 32px 24px 32px",
+    huge: "27px 40px 28px 40px"
+);
+$contentPadding: (
+    small: "0 16px 12px 16px",
+    medium: "0 24px 20px 24px",
+    large: "0 32px 24px 32px",
+    huge: "0 40px 28px 40px"
+);
+$footerPadding: (
+    small: "0 16px 12px 16px",
+    medium: "0 24px 20px 24px",
+    large: "0 32px 24px 32px",
+    huge: "0 40px 28px 40px"
+);
+$actionPadding: (
+    small: "12px 16px",
+    medium: "20px 24px",
+    large: "24px 32px",
+    huge: "28px 40px"
+);
+$backgroundDeepColor: rgb(250, 250, 252);
+.n-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    word-break: break-word;
+    color: $textColor2;
+    border-radius: $borderRadius;
+    line-height: $lineHeight;
+    background-color: $baseColor;
+    font-size: $fontSize;
+    transition:
+        color 0.3s $cubicBezierEaseInOut,
+        box-shadow 0.3s $cubicBezierEaseInOut,
+        background-color 0.3s $cubicBezierEaseInOut,
+        border-color 0.3s $cubicBezierEaseInOut;
+}
+
+.n-card-border {
+    border: 1px solid $dividerColor;
+}
+
+.n-card-cover {
+    width: 100%;
+    overflow: hidden;
+    border-radius: $borderRadius $borderRadius 0 0;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+@each $name, $titleFontSize in (("small", "16px"), ("medium", "18px"), ("large", "18px"), ("huge", "18px")) {
+    .n-card-header-#{$name} {
+        display: flex;
+        align-items: center;
+        padding: #{map-get($map: $headerPadding, $key: $name)};
+        .n-card-header-title {
+            flex: 1;
+            font-weight: 500;
+            font-size: #{$titleFontSize};
+        }
+        .n-card-header-close {
+            margin: 0 0 0 8px;
+            color: $closeColor;
+            font-size: $closeIconSize;
+            &::before {
+                transition:
+                    background-color 0.3s $cubicBezierEaseInOut,
+                    color 0.3s $cubicBezierEaseInOut;
+            }
+            &:hover {
+                &::before {
+                    background-color: rgba(0, 0, 0, 0.09);
+                    width: $closeBoxSize;
+                    height: $closeBoxSize;
+                    border-radius: $borderRadius;
+                }
+            }
+        }
+    }
+    .n-card-content-#{$name} {
+        padding: #{map-get($map: $contentPadding, $key: $name)};
+    }
+    .n-card-footer-#{$name} {
+        padding: #{map-get($map: $footerPadding, $key: $name)};
+    }
+    .n-card-action-#{$name} {
+        padding: #{map-get($map: $actionPadding, $key: $name)};
+        background-color: $backgroundDeepColor;
+        border-radius: 0 0 $borderRadius $borderRadius;
+    }
+}
+
+.n-card-hover {
+    &:hover {
+        box-shadow: $boxShadow1;
+    }
+}
+
+.n-card-embedded {
+    background-color: $backgroundDeepColor;
+}

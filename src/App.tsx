@@ -1,7 +1,7 @@
 /*
  * @Author: shiruiqiang
  * @Date: 2023-07-03 11:19:58
- * @LastEditTime: 2023-08-07 14:29:30
+ * @LastEditTime: 2023-08-09 10:07:27
  * @LastEditors: shiruiqiang
  * @FilePath: App.tsx
  * @Description: shiruiqiang
@@ -13,10 +13,13 @@ import './styles/index.scss';
 // const RootComponent = React.lazy(() => import('./components/button/demo/base-button'));
 // const RootComponent = React.lazy(() => import('./components/icon/demo/base-icon'));
 // const RootComponent = React.lazy(() => import('./components/avatar/demo/base-avatar'));
-const RootComponent = React.lazy(() => import('./components/tag/demo/base-tag'));
+const RootComponent = React.lazy(() => import('./components/card/demo/base-card'));
+
 function App () {
     return (
-        <RootComponent></RootComponent>
+        <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
+            <RootComponent></RootComponent>
+        </div>
     );
 }
 
